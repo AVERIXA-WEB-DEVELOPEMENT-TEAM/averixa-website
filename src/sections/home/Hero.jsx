@@ -1,9 +1,10 @@
 import { Button } from '../../components/ui'
+import HeroDiagram from './HeroDiagram'
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="relative z-10 mx-auto flex max-w-site flex-wrap items-center gap-8 px-6 pb-16 pt-18">
+      <div className="mx-auto flex max-w-site flex-wrap items-center gap-12 px-6 pb-16 pt-18">
         {/* Left: copy */}
         <div className="flex max-w-145 flex-[1_1_460px] flex-col gap-5">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-secondary-text">
@@ -26,9 +27,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: the 3D sculpture goes here in step 2 */}
-        <div className="grid min-h-115 flex-[1_1_380px] place-items-center self-stretch rounded-card border border-dashed border-line text-sm text-muted">
-          3D sculpture
+        {/* Right: what Averixa does, at a glance */}
+        <div className="flex flex-[1_1_340px] justify-center lg:justify-end">
+          <HeroDiagram />
         </div>
       </div>
     </section>
