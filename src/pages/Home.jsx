@@ -1,7 +1,14 @@
+import Hero from '../sections/home/Hero'
+
 export default function Home() {
-    return (
-        <section className="mx-auto max-w-site px-6 py-24">
-            <h1 className="text-5x1 font-extrabold">Home</h1>
-        </section>
-    )
+  return (
+    <>
+      <Hero />
+
+      {/* Albert's sections go here. The nav's About link scrolls to id="about". */}
+      <section id="about" className="mx-auto max-w-site scroll-mt-24 px-6 py-24">
+        <h2 className="text-3xl font-bold">The human parts</h2>
+      </section>
+    </>
+  )
 }
