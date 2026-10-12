@@ -7,6 +7,7 @@ import ContactDetails, { getContactErrors } from '../sections/service-request/Co
 import FormFooter from '../sections/service-request/FormFooter'
 import RequestSuccess from '../sections/service-request/RequestSuccess'
 import { submitServiceRequest } from '../sections/service-request/submitRequest'
+import './ServiceRequest.css'
 
 const TOTAL_STEPS = 3
 
@@ -83,7 +84,7 @@ export default function ServiceRequest() {
 
   if (status === 'success') {
     return (
-      <section className="mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+      <section className="service-request-page mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
         <RequestSuccess serviceIds={formData.service} />
       </section>
     )
@@ -93,19 +94,19 @@ export default function ServiceRequest() {
   const sending = status === 'sending'
 
   return (
-    <section className="mx-auto max-w-site px-6 py-16 md:py-20">
+    <section className="service-request-page mx-auto max-w-site px-6 py-16 md:py-20">
       {/* Top text block */}
       <header className="flex max-w-3xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:gap-8">
-          <p className="text-lg font-extrabold text-secondary md:text-[22px]">Request a Service</p>
-          <h1 className="text-[28px] font-extrabold leading-tight md:text-[40px]">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-secondary-text">Request a Service</p>
+          <h1 className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">
             Let’s build something{' '}
             <span className="text-secondary">
               <Accent>great</Accent>
             </span>
           </h1>
         </div>
-        <p className="font-medium md:text-[17px]">
+        <p className="max-w-2xl text-base leading-[1.6] text-muted">
           Tell us where you are, what feels stuck and what you want to change. We’ll take it from there.
         </p>
       </header>
@@ -114,11 +115,11 @@ export default function ServiceRequest() {
       <div
         ref={cardRef}
         tabIndex={-1}
-        className="mt-12 scroll-mt-28 rounded-[10px] border border-line px-5 py-8 outline-none md:mt-[74px] md:px-12 md:py-12 lg:px-[62px]"
+        className="mt-12 scroll-mt-28 rounded-[14px] border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
       >
         <RequestStepper total={TOTAL_STEPS} current={step} />
 
-        <div className="mt-10">
+        <div key={step} className="service-step-panel mt-10">
           {step === 1 && (
             <ServicePicker
               value={formData.service}

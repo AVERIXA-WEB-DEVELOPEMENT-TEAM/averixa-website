@@ -5,10 +5,10 @@ export default function ServicePicker({ value, onChange }) {
   return (
     <div>
       <div className="flex max-w-[796px] flex-col gap-4 md:gap-[26px]">
-        <h2 id="service-step-title" className="text-2xl font-extrabold md:text-[32px] lg:text-[40px]">
+        <h2 id="service-step-title" className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">
           What do you need help with?
         </h2>
-        <p className="font-medium md:text-lg lg:text-xl">
+        <p className="text-base leading-[1.6] text-muted">
           Select all the services you need. We’ll tailor your proposal from here.
         </p>
       </div>
@@ -16,7 +16,7 @@ export default function ServicePicker({ value, onChange }) {
       <div
         role="group"
         aria-labelledby="service-step-title"
-        className="mt-10 grid gap-5 md:mt-12 md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:mt-[62px] lg:gap-x-[46px] lg:gap-y-[60px]"
+        className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-6"
       >
         {services.map((service) => (
           <ServiceCard

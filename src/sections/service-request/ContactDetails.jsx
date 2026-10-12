@@ -33,13 +33,13 @@ export default function ContactDetails({ formData, onChange }) {
   return (
     <div>
       <div className="flex max-w-[796px] flex-col gap-4 md:gap-[26px]">
-        <h2 className="text-2xl font-extrabold md:text-[32px] lg:text-[40px]">How should we reach you?</h2>
-        <p className="font-medium md:text-lg lg:text-xl">
+        <h2 className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">How should we reach you?</h2>
+        <p className="text-base leading-[1.6] text-muted">
           We’ll review your request and get back to you within one business day.
         </p>
       </div>
 
-      <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-2 md:gap-x-10 md:px-[22px] lg:mt-[62px] lg:gap-x-[62px] lg:gap-y-[50px] lg:px-[18px]">
+      <div className="mt-8 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-x-8 md:px-6 lg:gap-y-12">
         <RequestField
           label="Full name"
           autoComplete="name"
