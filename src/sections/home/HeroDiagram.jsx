@@ -28,7 +28,7 @@ export default function HeroDiagram() {
 
       <div className="rounded-card border border-line bg-navy-800/90 p-5 shadow-2xl shadow-black/30 sm:p-7">
         <div className="mb-6 flex items-center justify-between gap-3 motion-safe:animate-rise" style={delay(0.15)}>
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">How Averixa works</p>
+          <p className="text-kicker uppercase text-muted">How Averixa works</p>
           <span className="rounded-full bg-navy-700 px-2.5 py-1 text-[11px] font-medium text-white">3 steps</span>
         </div>
 
@@ -79,7 +79,7 @@ export default function HeroDiagram() {
         {/* The outcome: traffic narrowing down to customers */}
         <div className="mt-6 border-t border-line pt-5">
           <p
-            className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-muted motion-safe:animate-rise"
+            className="mb-3 text-kicker uppercase text-muted motion-safe:animate-rise"
             style={delay(RESULT_START)}
           >
             The result
