@@ -64,7 +64,7 @@ export default function ServiceRequest() {
       <header className="flex max-w-3xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:gap-8">
           <p className="text-lg font-extrabold text-secondary md:text-[22px]">Request a Service</p>
-          <h1 className="text-[28px] font-extrabold leading-tight md:text-[40px]">
+          <h1 className="text-header">
             Let’s build something{' '}
             <span className="text-secondary">
               <Accent>great</Accent>
