@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Accent } from '../components/ui'
 import RequestStepper from '../sections/service-request/RequestStepper'
 import ServicePicker from '../sections/service-request/ServicePicker'
+import ProjectDetails from '../sections/service-request/ProjectDetails'
+import ContactDetails, { getContactErrors } from '../sections/service-request/ContactDetails'
 import FormFooter from '../sections/service-request/FormFooter'
+import RequestSuccess from '../sections/service-request/RequestSuccess'
+import { submitServiceRequest } from '../sections/service-request/submitRequest'
 
 const TOTAL_STEPS = 3
 
@@ -19,17 +23,74 @@ const initialForm = {
 }
 
 export default function ServiceRequest() {
-  // Step 5 adds the functions that change the step.
-  const [step] = useState(1)
+  const [step, setStep] = useState(1)
   const [formData, setFormData] = useState(initialForm)
+  // 'idle' → 'sending' → 'success' or 'error'
+  const [status, setStatus] = useState('idle')
+
+  const cardRef = useRef(null)
+  const hasNavigated = useRef(false)
 
   // Changes one answer and keeps all the others.
   function updateField(field, value) {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
-  // Continue only becomes active once the current step is answered.
-  const canContinue = step === 1 ? formData.service !== '' : false
+  // Is this step answered?
+  function isStepComplete(n) {
+    if (n === 1) return formData.service !== ''
+    if (n === 2) return formData.budget !== '' && formData.timeline !== ''
+    if (n === 3) return Object.keys(getContactErrors(formData)).length === 0
+    return false
+  }
+
+  function goNext() {
+    if (!isStepComplete(step) || step === TOTAL_STEPS) return
+    hasNavigated.current = true
+    setStep(step + 1)
+  }
+
+  function goBack() {
+    if (step === 1 || status === 'sending') return
+    hasNavigated.current = true
+    setStep(step - 1)
+  }
+
+  async function handleSubmit() {
+    if (!isStepComplete(TOTAL_STEPS) || status === 'sending') return
+    setStatus('sending')
+    try {
+      await submitServiceRequest(formData)
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  // After Back or Continue, bring the top of the form card into view and move
+  // keyboard focus there, so the new step isn't hidden below the fold.
+  useEffect(() => {
+    if (!hasNavigated.current) return
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    cardRef.current.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
+    cardRef.current.focus({ preventScroll: true })
+  }, [step])
+
+  // The success screen starts at the top of the page.
+  useEffect(() => {
+    if (status === 'success') window.scrollTo(0, 0)
+  }, [status])
+
+  if (status === 'success') {
+    return (
+      <section className="mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+        <RequestSuccess serviceId={formData.service} />
+      </section>
+    )
+  }
+
+  const onLastStep = step === TOTAL_STEPS
+  const sending = status === 'sending'
 
   return (
     <section className="mx-auto max-w-site px-6 py-16 md:py-20">
@@ -37,7 +98,7 @@ export default function ServiceRequest() {
       <header className="flex max-w-3xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:gap-8">
           <p className="text-lg font-extrabold text-secondary md:text-[22px]">Request a Service</p>
-          <h1 className="text-header">
+          <h1 className="text-[28px] font-extrabold leading-tight md:text-[40px]">
             Let’s build something{' '}
             <span className="text-secondary">
               <Accent>great</Accent>
@@ -50,16 +111,38 @@ export default function ServiceRequest() {
       </header>
 
       {/* Form card */}
-      <div className="mt-12 rounded-[10px] border border-line px-5 py-8 md:mt-[74px] md:px-12 md:py-12 lg:px-[62px]">
+      <div
+        ref={cardRef}
+        tabIndex={-1}
+        className="mt-12 scroll-mt-28 rounded-[10px] border border-line px-5 py-8 outline-none md:mt-[74px] md:px-12 md:py-12 lg:px-[62px]"
+      >
         <RequestStepper total={TOTAL_STEPS} current={step} />
 
         <div className="mt-10">
           {step === 1 && (
             <ServicePicker value={formData.service} onChange={(id) => updateField('service', id)} />
           )}
+          {step === 2 && <ProjectDetails formData={formData} onChange={updateField} />}
+          {step === 3 && <ContactDetails formData={formData} onChange={updateField} />}
         </div>
 
-        <FormFooter step={step} total={TOTAL_STEPS} canContinue={canContinue} />
+        {status === 'error' && (
+          <p
+            role="alert"
+            className="mt-8 rounded-[10px] border border-red-400/50 bg-red-400/10 px-4 py-3 text-sm text-red-300"
+          >
+            We couldn’t send your request. Please check your connection and try again.
+          </p>
+        )}
+
+        <FormFooter
+          step={step}
+          total={TOTAL_STEPS}
+          canContinue={isStepComplete(step) && !sending}
+          onBack={goBack}
+          onNext={onLastStep ? handleSubmit : goNext}
+          nextLabel={onLastStep ? (sending ? 'Sending…' : 'Submit Request') : 'Continue'}
+        />
       </div>
     </section>
   )
