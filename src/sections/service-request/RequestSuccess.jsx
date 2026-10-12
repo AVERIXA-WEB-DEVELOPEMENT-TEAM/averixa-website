@@ -14,18 +14,18 @@ export default function RequestSuccess({ serviceIds }) {
   }, [])
 
   return (
-    <div className="flex w-full flex-col items-center gap-10 rounded-[10px] border border-line px-5 py-12 text-center md:gap-[60px] md:py-[50px]">
-      <span className="grid h-[100px] w-[124px] place-items-center rounded-full border border-secondary/30 bg-secondary/20 text-lg font-extrabold text-secondary-text md:h-[135px] md:w-[166px] md:text-xl">
+    <div className="flex w-full flex-col items-center gap-10 rounded-[14px] border border-line bg-navy-800 px-5 py-12 text-center md:py-16">
+      <span className="grid size-20 place-items-center rounded-full border border-secondary/30 bg-secondary/20 text-base font-bold text-secondary-text md:size-24">
         Done
       </span>
 
       <div className="flex flex-col items-center gap-8 md:gap-[60px]">
-        <h2 ref={headingRef} tabIndex={-1} className="text-xl font-extrabold outline-none md:text-[22px]">
+        <h2 ref={headingRef} tabIndex={-1} className="text-[28px] font-extrabold leading-tight tracking-normal outline-none">
           Request Received
         </h2>
-        <p className="max-w-3xl font-medium md:text-lg">
+        <p className="max-w-3xl text-base leading-[1.6] text-muted">
           We’ll review your{' '}
-          <strong className="font-extrabold">
+          <strong className="font-bold text-white">
             {selectedServices.length > 0 ? selectedServices.join(', ') : 'service'}
           </strong>{' '}
           request and be in touch within one business day.

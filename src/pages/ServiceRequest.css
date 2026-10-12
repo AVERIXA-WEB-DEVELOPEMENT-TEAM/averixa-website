@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.service-request-page {
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes service-step-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-step-panel {
+  animation: service-step-enter 220ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-step-panel {
+    animation: none;
+  }
+}

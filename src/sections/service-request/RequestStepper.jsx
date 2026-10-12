@@ -1,3 +1,5 @@
+import { Check } from 'lucide-react'
+
 export default function RequestStepper({ total, current }) {
   const steps = Array.from({ length: total }, (_, i) => i + 1)
 
@@ -14,13 +16,14 @@ export default function RequestStepper({ total, current }) {
             aria-current={now ? 'step' : undefined}
           >
             {done ? (
-              <span className="grid h-10 shrink-0 place-items-center rounded-[10px] bg-secondary px-3 text-sm font-semibold text-white md:h-[53px] md:px-[14px] md:text-xl">
-                <span className="sr-only">Step {n} </span>Done
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-secondary text-navy-950 md:size-[52px]">
+                <span className="sr-only">Step {n} complete</span>
+                <Check size={20} strokeWidth={1.5} aria-hidden="true" />
               </span>
             ) : (
               <span
-                className={`grid size-10 shrink-0 place-items-center rounded-full text-sm font-medium text-white md:size-[54px] md:text-xl ${
-                  now ? 'bg-secondary' : 'border border-line-strong'
+                className={`grid size-10 shrink-0 place-items-center rounded-lg text-sm font-semibold text-white md:size-[52px] md:text-base ${
+                  now ? 'bg-primary' : 'border border-line-strong bg-navy-900'
                 }`}
               >
                 {n}
