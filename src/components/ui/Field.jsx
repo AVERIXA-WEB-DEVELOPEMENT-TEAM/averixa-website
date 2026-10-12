@@ -10,7 +10,7 @@ export default function Field({ label, multiline = false, error, className = '',
 
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
-      <label htmlFor={id} className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
+      <label htmlFor={id} className="text-kicker uppercase text-muted">
         {label}
       </label>
       <Input
