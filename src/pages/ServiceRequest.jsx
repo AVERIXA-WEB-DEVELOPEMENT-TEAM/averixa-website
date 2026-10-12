@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Accent, Stepper } from '../components/ui'
+import { Accent } from '../components/ui'
+import RequestStepper from '../sections/service-request/RequestStepper'
 import ServicePicker from '../sections/service-request/ServicePicker'
 import FormFooter from '../sections/service-request/FormFooter'
 
@@ -29,7 +30,7 @@ export default function ServiceRequest() {
 
       {/* Form card */}
       <div className="mt-12 rounded-[10px] border border-line px-5 py-8 md:mt-[74px] md:px-12 md:py-12 lg:px-[62px]">
-        <Stepper total={TOTAL_STEPS} current={step} />
+        <RequestStepper total={TOTAL_STEPS} current={step} />
 
         <div className="mt-10">
           {step === 1 && <ServicePicker />}
