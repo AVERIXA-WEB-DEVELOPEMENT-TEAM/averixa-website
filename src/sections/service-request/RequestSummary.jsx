@@ -1,11 +1,12 @@
 import { services } from '../../data/serviceRequest'
 
 export default function RequestSummary({ formData, className = '' }) {
-  // formData only stores the service id, so look up its title for display.
-  const service = services.find((item) => item.id === formData.service)
+  const selectedServices = services
+    .filter((item) => formData.service.includes(item.id))
+    .map((item) => item.title)
 
   const rows = [
-    ['Service', service ? service.title : '—'],
+    ['Services', selectedServices.length > 0 ? selectedServices.join(', ') : '—'],
     ['Budget', formData.budget || '—'],
     ['Timeline', formData.timeline || '—'],
   ]

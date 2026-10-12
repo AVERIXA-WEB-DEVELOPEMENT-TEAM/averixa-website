@@ -12,7 +12,7 @@ const TOTAL_STEPS = 3
 
 // Every answer in the form, all in one place. Empty to start.
 const initialForm = {
-  service: '',
+  service: [],
   budget: '',
   timeline: '',
   goals: '',
@@ -38,7 +38,7 @@ export default function ServiceRequest() {
 
   // Is this step answered?
   function isStepComplete(n) {
-    if (n === 1) return formData.service !== ''
+    if (n === 1) return formData.service.length > 0
     if (n === 2) return formData.budget !== '' && formData.timeline !== ''
     if (n === 3) return Object.keys(getContactErrors(formData)).length === 0
     return false
@@ -84,7 +84,7 @@ export default function ServiceRequest() {
   if (status === 'success') {
     return (
       <section className="mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
-        <RequestSuccess serviceId={formData.service} />
+        <RequestSuccess serviceIds={formData.service} />
       </section>
     )
   }
@@ -120,7 +120,17 @@ export default function ServiceRequest() {
 
         <div className="mt-10">
           {step === 1 && (
-            <ServicePicker value={formData.service} onChange={(id) => updateField('service', id)} />
+            <ServicePicker
+              value={formData.service}
+              onChange={(id) =>
+                updateField(
+                  'service',
+                  formData.service.includes(id)
+                    ? formData.service.filter((serviceId) => serviceId !== id)
+                    : [...formData.service, id],
+                )
+              }
+            />
           )}
           {step === 2 && <ProjectDetails formData={formData} onChange={updateField} />}
           {step === 3 && <ContactDetails formData={formData} onChange={updateField} />}
