@@ -2,9 +2,11 @@ import { useEffect, useRef } from 'react'
 import { Button } from '../../components/ui'
 import { services } from '../../data/serviceRequest'
 
-export default function RequestSuccess({ serviceId }) {
+export default function RequestSuccess({ serviceIds }) {
   const headingRef = useRef(null)
-  const service = services.find((item) => item.id === serviceId)
+  const selectedServices = services
+    .filter((item) => serviceIds.includes(item.id))
+    .map((item) => item.title)
 
   // Move focus to the heading so screen readers announce the result straight away.
   useEffect(() => {
@@ -22,8 +24,11 @@ export default function RequestSuccess({ serviceId }) {
           Request Received
         </h2>
         <p className="max-w-3xl font-medium md:text-lg">
-          We’ll review your <strong className="font-extrabold">{service ? service.title : 'service'}</strong> request
-          and be in touch within one business day.
+          We’ll review your{' '}
+          <strong className="font-extrabold">
+            {selectedServices.length > 0 ? selectedServices.join(', ') : 'service'}
+          </strong>{' '}
+          request and be in touch within one business day.
           <br />
           Check your inbox – we’ll send your confirmation shortly.
         </p>

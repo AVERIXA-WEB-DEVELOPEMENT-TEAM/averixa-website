@@ -9,7 +9,7 @@ export default function ServicePicker({ value, onChange }) {
           What do you need help with?
         </h2>
         <p className="font-medium md:text-lg lg:text-xl">
-          Select the primary service you’d like to request. We’ll tailor your proposal from here.
+          Select all the services you need. We’ll tailor your proposal from here.
         </p>
       </div>
 
@@ -24,7 +24,7 @@ export default function ServicePicker({ value, onChange }) {
             title={service.title}
             description={service.description}
             tags={service.tags}
-            selected={value === service.id}
+            selected={value.includes(service.id)}
             onSelect={() => onChange(service.id)}
           />
         ))}
