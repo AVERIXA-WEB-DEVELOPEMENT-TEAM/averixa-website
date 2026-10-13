@@ -1,6 +1,6 @@
 
 import Hero from '../sections/home/Hero'
-import { Card, Button } from '../components/ui'
+import { Card, Button, Tag} from '../components/ui'
 import { Link } from 'react-router'
 
 
@@ -15,7 +15,7 @@ export default function Home() {
         className="w-full scroll-mt-24 bg-navy-900 px-6 py-24"
       >
         <div className="mx-auto max-w-site">
-          <h2 className="text-header mb-10">
+          <h2 className="text-header mb-10 px-12">
             What we do to{' '}
             <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
               grow
@@ -26,25 +26,26 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* First card */}
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-xl font-bold">Website Development</h3>
+              <h3 className="text-sub font-sans">Website Development</h3>
 
               <p className="my-4 flex-1 py-2 text-gray-300">
                 Fast modern websites built to turn visitors into customers.
               </p>
 
-              <div className="mt-auto flex gap-2">
-                <Button>
+              <div className="mt-auto flex gap-2 ">
+                <Tag>
                   Design
-                </Button>
-                <Button>
+                </Tag>
+                
+                <Tag>
                   Build
-                </Button>
+                </Tag>
               </div>
             </Card>
 
             {/* Second card */}
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-xl font-bold">Content Creation</h3>
+              <h3 className="text-sub font-sans">Content Creation</h3>
 
               <p className="my-4 flex-1 py-2 text-gray-300">
                 Posts, scripts and visuals that stop the scroll and keep your
@@ -52,18 +53,18 @@ export default function Home() {
               </p>
 
               <div className="mt-auto flex gap-2">
-                <Button>
+                <Tag>
                   Social
-                </Button>
-                <Button>
+                </Tag>
+                <Tag>
                   Copy
-                </Button>
+                </Tag>
               </div>
             </Card>
 
             {/* Third card */}
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-xl font-bold">Digital Marketing</h3>
+              <h3 className="text-sub font-sans">Digital Marketing</h3>
 
               <p className="my-4 flex-1 py-2 text-gray-300">
                 Campaigns and strategies that put your brand in front of the
@@ -71,9 +72,9 @@ export default function Home() {
               </p>
 
               <div className="mt-auto flex gap-2">
-                <Button>Strategy</Button>
+                <Tag>Strategy</Tag>
                 
-                <Button>Growth</Button>
+                <Tag>Growth</Tag>
               </div>
             </Card>
           </div>
@@ -83,7 +84,7 @@ export default function Home() {
       {/* Growing in four steps */}
       <section className="w-full bg-navy-950 px-6 py-24">
         <div className="mx-auto max-w-site">
-          <h2 className="text-header mb-10">
+          <h2 className="text-header font-sans mb-10">
             From stuck to{' '}
             <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
               growing
@@ -94,9 +95,9 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {/* Card 1 */}
             <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-xl font-bold">Listen</h3>
+              <h3 className="text-center text-sub font-sans">Listen</h3>
 
-              <p className="my-4 flex-1 text-gray-300">
+              <p className="my-4 flex-1 text-body font-sans">
                 We understand your goals, your audience and what's getting in
                 the way.
               </p>
@@ -104,25 +105,25 @@ export default function Home() {
 
             {/* Card 2 */}
             <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-xl font-bold">Shape</h3>
+              <h3 className="text-center text-sub font-sans">Shape</h3>
 
-              <p className="my-4 flex-1 text-gray-300">
+              <p className="my-4 flex-1 text-body font-sans">
                 We turn what we learn into a focused, practical plan.
               </p>
             </Card>
 
             {/* Card 3 */}
             <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-xl font-bold">Create</h3>
+              <h3 className="text-center text-sub font-sans">Create</h3>
 
-              <p className="my-4 flex-1 text-gray-300">
+              <p className="my-4 flex text-body font-sans">
                 We bring the strategy to life with thoughtful creative work.
               </p>
             </Card>
 
             {/* Card 4 */}
             <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-xl font-bold">Grow</h3>
+              <h3 className="text-center text-sub font-sans">Grow</h3>
 
               <p className="my-4 flex-1 text-gray-300">
                 We learn from real results and keep making the work stronger.
@@ -144,15 +145,15 @@ export default function Home() {
 
           {/* Text content */}
           <div className="flex flex-1 flex-col gap-6">
-            <p className="text-kicker text-secondary">
+            <p className="text-body text-secondary">
               THE HUMAN PARTS
             </p>
 
             <h2 className="text-header">
-              The best work starts with listening and not a template.
+              "The best work starts with listening and not a template".
             </h2>
 
-            <p className="text-body">
+            <p className=" text-body">
               You won't be passed through layers of account management.
               You'll work directly with the people shaping the strategy,
               designing the experience and measuring what happens next.
@@ -168,13 +169,13 @@ export default function Home() {
       {/* Selected works */}
       <section className="w-full bg-navy-950 px-6 py-24">
         <div className="mx-auto max-w-site">
-          <p className="mb-4 text-kicker text-secondary">
+          <p className="mb-4 text-body text-secondary">
             SELECTED WORKS
           </p>
 
 
           <div className= 'flex w-full items-center justify-between gap-4'>
-          <h2 className="text-header mb-6">
+          <h2 className="text-header font-sans mb-6 ">
             Growth you can{' '}
             <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
               see
@@ -187,7 +188,7 @@ export default function Home() {
           </div>
           
 
-          <p className="text-body">
+          <p className="text-sub font-sans">
             The partnerships, the thinking and the outcomes.
           </p>
         </div>
