@@ -21,6 +21,8 @@ const initialForm = {
   email: '',
   company: '',
   notes: '',
+  newsletterOptIn: false,
+  marketingConsent: false,
 }
 
 export default function ServiceRequest() {
