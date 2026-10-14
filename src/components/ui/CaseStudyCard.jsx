@@ -2,6 +2,7 @@ import Card from './Card'
 import Tag from './Tag'
 import ResultBadge from './ResultBadge'
 
+
 export default function CaseStudyCard({ initials, name, industry, result, tags = [] }) {
   return (
     <Card className="flex h-full flex-col gap-4">
