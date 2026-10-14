@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import RequestField from './RequestField'
 import RequestSummary from './RequestSummary'
+import ConsentOptions from './ConsentOptions'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -80,6 +81,11 @@ export default function ContactDetails({ formData, onChange }) {
           inputClassName="min-h-32 lg:min-h-[180px]"
         />
         <RequestSummary className="md:col-span-2" formData={formData} />
+        <ConsentOptions
+          newsletterOptIn={formData.newsletterOptIn}
+          marketingConsent={formData.marketingConsent}
+          onChange={onChange}
+        />
       </div>
     </div>
   )
