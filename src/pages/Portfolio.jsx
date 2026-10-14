@@ -3,16 +3,12 @@ import { Button, Card, CaseStudyCard } from "../components/ui"
 import  works  from "../data/works"
 
 
-console.log(works)
-
-
-
 export default function Portfolio() {
     return (
         <>
-        <section className="w-full scroll-mt-24 bg-navy-900 px-6 py-24">
+        <section className="w-full scroll-mt-24 bg-navy-900 px-6 py-7 md:py-20">
            <div>
-            <p className="mb-4 text-body text-secondary">
+            <p className="text-body text-secondary">
             SELECTED WORKS
           </p>
 
@@ -25,7 +21,7 @@ export default function Portfolio() {
             
           </div>
 
-          <p className="mt-auto text-body font-sans">Good work is collaborative. Explore what we made together, what changed and the results that followed</p>
+          <p className="mt-auto text-muted font-sans">Good work is collaborative. Explore what we made together, what changed and the results that followed</p>
             
            </div>
         </section>
