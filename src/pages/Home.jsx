@@ -2,6 +2,7 @@
 import Hero from '../sections/home/Hero'
 import { Card, Button, Tag} from '../components/ui'
 import { Link } from 'react-router'
+import works from '../data/works'
 
 
 export default function Home() {
@@ -24,6 +25,8 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+           
+
             {/* First card */}
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
               <h3 className="text-sub font-sans">Website Development</h3>
@@ -188,7 +191,7 @@ export default function Home() {
           </div>
           
 
-          <p className="text-sub font-sans">
+          <p className="text-body font-sans">
             The partnerships, the thinking and the outcomes.
           </p>
         </div>
