@@ -15,7 +15,7 @@ const works = [
         name: 'Altair Ibn-La Ahad',
         industry: 'Abestergo',
         tags: ['AC2', 'Brotherhood'],
-        result: 'Synchronized'
+        result: 'Synchronized',
     },
     {
         id: 3,

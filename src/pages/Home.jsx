@@ -13,10 +13,10 @@ export default function Home() {
       {/* About / What we do */}
       <section
         id="about"
-        className="w-full scroll-mt-24 bg-navy-900 px-6 py-24"
+        className="w-full scroll-mt-24 bg-navy-900 px-6 py-16 md:py-20"
       >
         <div className="mx-auto max-w-site">
-          <h2 className="text-header mb-10 px-12">
+          <h2 className="text-header mb-10">
             What we do to{' '}
             <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
               grow
@@ -31,7 +31,7 @@ export default function Home() {
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
               <h3 className="text-sub font-sans">Website Development</h3>
 
-              <p className="my-4 flex-1 py-2 text-gray-300">
+              <p className="my-4 flex-1 py-2 text-muted">
                 Fast modern websites built to turn visitors into customers.
               </p>
 
@@ -50,7 +50,7 @@ export default function Home() {
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
               <h3 className="text-sub font-sans">Content Creation</h3>
 
-              <p className="my-4 flex-1 py-2 text-gray-300">
+              <p className="my-4 flex-1 py-2 text-muted">
                 Posts, scripts and visuals that stop the scroll and keep your
                 audience coming back.
               </p>
@@ -69,7 +69,7 @@ export default function Home() {
             <Card className="flex h-full min-w-0 flex-col bg-navy-950">
               <h3 className="text-sub font-sans">Digital Marketing</h3>
 
-              <p className="my-4 flex-1 py-2 text-gray-300">
+              <p className="my-4 flex-1 py-2 text-muted">
                 Campaigns and strategies that put your brand in front of the
                 right people.
               </p>
@@ -100,7 +100,7 @@ export default function Home() {
             <Card className="flex h-full flex-col bg-navy-900">
               <h3 className="text-center text-sub font-sans">Listen</h3>
 
-              <p className="my-4 flex-1 text-body font-sans">
+              <p className="my-4 flex-1 text-muted font-sans">
                 We understand your goals, your audience and what's getting in
                 the way.
               </p>
@@ -110,7 +110,7 @@ export default function Home() {
             <Card className="flex h-full flex-col bg-navy-900">
               <h3 className="text-center text-sub font-sans">Shape</h3>
 
-              <p className="my-4 flex-1 text-body font-sans">
+              <p className="my-4 flex-1 text-muted font-sans">
                 We turn what we learn into a focused, practical plan.
               </p>
             </Card>
@@ -119,7 +119,7 @@ export default function Home() {
             <Card className="flex h-full flex-col bg-navy-900">
               <h3 className="text-center text-sub font-sans">Create</h3>
 
-              <p className="my-4 flex text-body font-sans">
+              <p className="my-4 flex text-muted font-sans">
                 We bring the strategy to life with thoughtful creative work.
               </p>
             </Card>
@@ -128,7 +128,7 @@ export default function Home() {
             <Card className="flex h-full flex-col bg-navy-900">
               <h3 className="text-center text-sub font-sans">Grow</h3>
 
-              <p className="my-4 flex-1 text-gray-300">
+              <p className="my-4 flex-1 text-muted">
                 We learn from real results and keep making the work stronger.
               </p>
             </Card>
@@ -162,7 +162,7 @@ export default function Home() {
               designing the experience and measuring what happens next.
             </p>
 
-            <p className="text-basic">
+            <p className="text-muted">
               Clear thinking, honest conversations, no theatre.
             </p>
           </div>
