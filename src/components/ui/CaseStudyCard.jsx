@@ -1,9 +1,9 @@
+import { ArrowUpRight } from 'lucide-react'
 import Card from './Card'
 import Tag from './Tag'
 import ResultBadge from './ResultBadge'
 
-
-export default function CaseStudyCard({ initials, name, industry, result, tags = [] }) {
+export default function CaseStudyCard({ initials, name, industry, result, tags = [], description, builtBy, href }) {
   return (
     <Card className="flex h-full flex-col gap-4">
       <div className="flex items-start justify-between gap-3">
@@ -13,7 +13,24 @@ export default function CaseStudyCard({ initials, name, industry, result, tags =
         {industry && <span className="text-basic text-muted">{industry}</span>}
       </div>
 
-      <h3 className="text-sub">{name}</h3>
+      <h3 className="text-sub">
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-start gap-1.5 transition-colors duration-200 hover:text-primary-soft"
+          >
+            {name}
+            <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" className="mt-1.5 shrink-0" />
+            <span className="sr-only">(opens in a new tab)</span>
+          </a>
+        ) : (
+          name
+        )}
+      </h3>
+
+      {description && <p className="text-body text-muted">{description}</p>}
 
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-2">
@@ -22,6 +39,8 @@ export default function CaseStudyCard({ initials, name, industry, result, tags =
           ))}
         </div>
       )}
+
+      {builtBy && <p className="text-basic text-muted">Built by {builtBy}</p>}
 
       <div className="mt-auto">
         <ResultBadge>{result}</ResultBadge>
