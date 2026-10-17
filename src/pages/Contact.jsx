@@ -22,7 +22,7 @@ export default function Contact() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {/* WhatsApp chat */}
-        <div className="flex flex-col gap-3 rounded-card border border-secondary/60 bg-navy-800 p-6 sm:col-span-2 md:p-8">
+        <div className="flex flex-col gap-3 rounded-card border border-secondary/60 bg-navy-800 p-6 sm:col-span-2 md:p-8 lg:col-span-1 lg:row-span-2">
           <p className="text-kicker uppercase text-secondary-text">{whatsapp.label}</p>
           <p className="text-sub">{whatsapp.number}</p>
           <p className="text-body text-muted">Tell us what you need. We usually reply within one business day.</p>
