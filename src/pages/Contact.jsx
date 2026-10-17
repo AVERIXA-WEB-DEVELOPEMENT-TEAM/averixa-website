@@ -22,19 +22,19 @@ export default function Contact() {
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {/* WhatsApp chat */}
-        <Card interactive={false} className="flex flex-col gap-3 border-secondary/60 sm:col-span-2 md:p-8">
+        <div className="flex flex-col gap-3 rounded-card border border-secondary/60 bg-navy-800 p-6 sm:col-span-2 md:p-8">
           <p className="text-kicker uppercase text-secondary-text">{whatsapp.label}</p>
           <p className="text-sub">{whatsapp.number}</p>
           <p className="text-body text-muted">Tell us what you need. We usually reply within one business day.</p>
           <div className="mt-3">
             <Button href={whatsapp.href}>Chat on WhatsApp</Button>
           </div>
-        </Card>
+        </div>
 
         {/* One card per social profile */}
         {socials.map((social) => (
           <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="group block">
-            <Card className="flex h-full items-center justify-between gap-4 p-5">
+            <Card className="flex h-full items-center justify-between gap-4">
               <div className="min-w-0">
                 <p className="text-kicker uppercase text-muted">{social.label}</p>
                 <p className="mt-1 truncate text-control font-semibold">{social.handle}</p>
