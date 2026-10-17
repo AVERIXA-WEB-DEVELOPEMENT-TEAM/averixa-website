@@ -2,11 +2,14 @@
 import Hero from '../sections/home/Hero'
 import { Card, Button, Tag} from '../components/ui'
 import { Link } from 'react-router'
+import PageMeta from '../components/layout/PageMeta'
+import { pageMeta } from '../data/pages'
 
 
 export default function Home() {
   return (
     <>
+      <PageMeta {...pageMeta.home} />
       <Hero />
 
       {/* About / What we do */}

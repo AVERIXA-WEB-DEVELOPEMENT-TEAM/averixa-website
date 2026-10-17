@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Accent } from '../components/ui'
+import PageMeta from '../components/layout/PageMeta'
+import { pageMeta } from '../data/pages'
 import RequestStepper from '../sections/service-request/RequestStepper'
 import ServicePicker from '../sections/service-request/ServicePicker'
 import ProjectDetails from '../sections/service-request/ProjectDetails'
@@ -84,9 +86,12 @@ export default function ServiceRequest() {
     if (status === 'success') window.scrollTo(0, 0)
   }, [status])
 
+  const meta = <PageMeta {...pageMeta.services} />
+
   if (status === 'success') {
     return (
       <section className="service-request-page mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+        {meta}
         <RequestSuccess serviceIds={formData.service} />
       </section>
     )
@@ -97,6 +102,7 @@ export default function ServiceRequest() {
 
   return (
     <section className="service-request-page mx-auto max-w-site px-6 py-16 md:py-20">
+      {meta}
       {/* Top text block */}
       <header className="flex max-w-3xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:gap-8">
