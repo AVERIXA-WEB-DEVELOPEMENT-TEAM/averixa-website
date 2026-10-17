@@ -1,7 +1,7 @@
 import { useId } from 'react'
 
 const control =
-  'w-full rounded-lg border border-line bg-navy-900 px-4 py-3 text-[15px] text-white placeholder:text-muted/60 ' +
+  'w-full rounded-lg border border-line bg-navy-900 px-4 py-3 text-control text-white placeholder:text-muted/60 ' +
   'transition-colors duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30'
 
 export default function Field({ label, multiline = false, error, className = '', ...props }) {

@@ -12,7 +12,7 @@ const links = [
 ]
 
 const bookButton =
-  'rounded-lg bg-primary px-4 py-2.5 text-[13px] font-semibold transition duration-200 hover:-translate-y-px hover:bg-primary-hover'
+  'rounded-lg bg-primary px-4 py-2.5 text-small font-semibold transition duration-200 hover:-translate-y-px hover:bg-primary-hover'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -33,7 +33,7 @@ export default function Header() {
               to={link.to}
               end
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-[13px] font-semibold transition-colors duration-200 ${
+                `rounded-full px-4 py-2 text-small font-semibold transition-colors duration-200 ${
                   isActive && link.label !== 'About' ? 'bg-primary text-white' : 'text-muted hover:text-white'
                 }`
               }
