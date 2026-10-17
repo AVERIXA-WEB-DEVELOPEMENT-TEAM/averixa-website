@@ -3,7 +3,7 @@ import Card from './Card'
 import Tag from './Tag'
 import ResultBadge from './ResultBadge'
 
-export default function CaseStudyCard({ initials, name, industry, result, tags = [], description, builtBy, href }) {
+export default function CaseStudyCard({ initials, name, industry, result, tags = [], description, href }) {
   return (
     <Card className="flex h-full flex-col gap-4">
       <div className="flex items-start justify-between gap-3">
@@ -39,8 +39,6 @@ export default function CaseStudyCard({ initials, name, industry, result, tags =
           ))}
         </div>
       )}
-
-      {builtBy && <p className="text-basic text-muted">Built by {builtBy}</p>}
 
       <div className="mt-auto">
         <ResultBadge>{result}</ResultBadge>
