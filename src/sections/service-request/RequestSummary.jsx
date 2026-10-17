@@ -12,7 +12,7 @@ export default function RequestSummary({ formData, className = '' }) {
   ]
 
   return (
-    <div className={`rounded-[14px] border border-line bg-navy-800 p-4 md:p-6 ${className}`}>
+    <div className={`rounded-card border border-line bg-navy-800 p-4 md:p-6 ${className}`}>
       <div>
         <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-white">Your request summary</h3>
         <dl className="mt-4 flex flex-col gap-3">

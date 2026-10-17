@@ -3,6 +3,7 @@
 @theme {
   --color-primary: #2c5ce0;
   --color-primary-hover: #3d6cf0;
+  --color-primary-soft: #8fb0ff;
   --color-secondary: #3fb45f;
   --color-secondary-text: #5fd07e;
   --color-navy-950: #081333;
@@ -55,6 +56,10 @@
 
   --text-basic: 0.75rem;
   --text-basic--font-weight: 500;
+
+  /* UI text: nav pills and small buttons (13px), form controls and default buttons (15px) */
+  --text-small: 0.8125rem;
+  --text-control: 0.9375rem;
 
   /* Hero diagram */
   --animate-rise: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;

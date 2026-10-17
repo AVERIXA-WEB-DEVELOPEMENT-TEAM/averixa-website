@@ -6,13 +6,12 @@ import Logo from './Logo'
 const links = [
   { to: '/', label: 'Home' },
   { to: '/services', label: 'Service' },
-  { to: '/#about', label: 'About' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/contact', label: 'Contact' },
 ]
 
 const bookButton =
-  'rounded-lg bg-primary px-4 py-2.5 text-[13px] font-semibold transition duration-200 hover:-translate-y-px hover:bg-primary-hover'
+  'rounded-lg bg-primary px-4 py-2.5 text-small font-semibold transition duration-200 hover:-translate-y-px hover:bg-primary-hover'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -33,8 +32,8 @@ export default function Header() {
               to={link.to}
               end
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-[13px] font-semibold transition-colors duration-200 ${
-                  isActive && link.label !== 'About' ? 'bg-primary text-white' : 'text-muted hover:text-white'
+                `rounded-full px-4 py-2 text-small font-semibold transition-colors duration-200 ${
+                  isActive ? 'bg-primary text-white' : 'text-muted hover:text-white'
                 }`
               }
             >
@@ -72,7 +71,7 @@ export default function Header() {
               onClick={close}
               className={({ isActive }) =>
                 `block border-b border-line/60 py-3.5 font-semibold ${
-                  isActive && link.label !== 'About' ? 'text-white' : 'text-muted'
+                  isActive ? 'text-white' : 'text-muted'
                 }`
               }
             >

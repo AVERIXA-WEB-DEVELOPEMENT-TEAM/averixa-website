@@ -34,8 +34,8 @@ export default function ContactDetails({ formData, onChange }) {
   return (
     <div>
       <div className="flex max-w-[796px] flex-col gap-4 md:gap-[26px]">
-        <h2 className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">How should we reach you?</h2>
-        <p className="text-base leading-[1.6] text-muted">
+        <h2 className="text-header">How should we reach you?</h2>
+        <p className="text-body text-muted">
           We’ll review your request and get back to you within one business day.
         </p>
       </div>
