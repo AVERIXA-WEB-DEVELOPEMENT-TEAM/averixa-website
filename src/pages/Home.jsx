@@ -2,7 +2,6 @@
 import Hero from '../sections/home/Hero'
 import { Card, Button, Tag} from '../components/ui'
 import { Link } from 'react-router'
-import works from '../data/works'
 
 
 export default function Home() {

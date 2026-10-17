@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { Button, Card, CaseStudyCard } from "../components/ui"
-import  works  from "../data/works"
+import { works } from "../data/works"
 
 
 export default function Portfolio() {
@@ -48,7 +48,7 @@ export default function Portfolio() {
  
                 {works.map((work) => (
                     <CaseStudyCard
-                    key={work.id}
+                    key={work.name}
                         {...work}
                     />
                 ))}
@@ -60,7 +60,7 @@ export default function Portfolio() {
         <section className="mb-4 w-full bg-navy-950 px-6 py-24">
             <p className="mb-12 text-sub text-secondary">Service We Provide</p>
             <div className="grid grid-cols-2 gap-6 md:grid-cols-4 font-sans">
-                {works.map((work)=><Card key={work.id}>
+                {works.map((work)=><Card key={work.name}>
                     <span>{work.industry}</span>
                 </Card>)}
 

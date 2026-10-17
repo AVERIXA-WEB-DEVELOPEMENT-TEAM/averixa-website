@@ -1,58 +1,181 @@
+// Portfolio content for the Portfolio page and the Selected works section on Home.
+// `industry` is the category the filter pills use.
+// `featured: true` puts a project in Selected works on Home.
+// No invented numbers: only add a figure to `result` when the client has confirmed it.
 
+export const categories = ['All', 'Education', 'E-commerce', 'Web apps', 'Web3', 'Websites', 'Content']
 
-const works = [
-    {
-        id: 1,
-        initials: 'EK',
-        name : ' Edward Kenway',
-        industry: 'Abestergo',
-        tags : ['AC Black Flag'],
-        result : 'Syncronized ',
-    },
-    {
-        id: 2,
-        initials: 'AM',
-        name: 'Altair Ibn-La Ahad',
-        industry: 'Abestergo',
-        tags: ['AC2', 'Brotherhood'],
-        result: 'Synchronized',
-    },
-    {
-        id: 3,
-        initials: 'EZ',
-        name: 'Ezio Auditore',
-        industry: 'Assassin Brotherhood',
-        tags: ['AC2', 'Brotherhood', 'Revelations'],
-        result: 'Master Assassin',
-    },
-    {
-        id: 4,
-        initials: 'CT',
-        name: 'Connor Kenway',
-        industry: 'Colonial Brotherhood',
-        tags: ['AC3', 'American Revolution'],
-        result: 'The Revolution Begins',
-    },
-    
-    {
-    id: 5,
-    initials: 'BS',
-    name: 'Bayek of Siwa',
-    industry: 'Hidden Ones',
-    tags: ['Origins', 'Ancient Egypt'],
-    result: 'The Hidden Ones Founded',
-    },
+export const works = [
+  // Education
+  {
+    initials: 'UC',
+    name: 'UniClear Clearance Portal',
+    industry: 'Education',
+    tags: ['Next.js', 'Vercel'],
+    result: 'Clearance across five departments, fully paperless',
+    description:
+      'A clearance portal built for a university. Students submit one request, track approvals in real time and download a PDF certificate once cleared.',
+    builtBy: 'Clifford-Ordor Nnenna Ruth',
+    href: 'https://trinity-clearance-portal.vercel.app',
+    featured: true,
+  },
+  {
+    initials: 'EV',
+    name: 'Campus E-Voting',
+    industry: 'Education',
+    tags: ['React', 'Vercel'],
+    result: 'Elections with no paper ballots and no manual counting',
+    description:
+      "A secure voting platform built for a university's student elections. Students vote from any device and results are tallied automatically.",
+    builtBy: 'Clifford-Ordor Nnenna Ruth',
+    href: 'https://e-voting-web-app.vercel.app',
+  },
+  {
+    initials: 'QS',
+    name: 'QuickScan',
+    industry: 'Education',
+    tags: ['React', 'Vercel'],
+    result: 'Attendance recorded in real time from one QR scan',
+    description:
+      'A QR attendance system. A lecturer generates a code, students scan it on their phones, and paper sign-in sheets disappear.',
+    builtBy: 'Clifford-Ordor Nnenna Ruth',
+    href: 'https://quickscan-zeta.vercel.app',
+  },
+  {
+    initials: 'FF',
+    name: 'FocusFlow',
+    industry: 'Education',
+    tags: ['TypeScript', 'Vercel'],
+    result: 'Focus timer with streaks and study-hour analytics',
+    description:
+      'A study app for university students that pairs a distraction-free Pomodoro timer with weekly streaks and progress breakdowns.',
+    builtBy: 'Clifford-Ordor Nnenna Ruth',
+    href: 'https://focus-flow-navy-tau.vercel.app',
+  },
 
-    {
-        id: 6,
-        initials: 'JA',
-        name: 'Jacob Frye',
-        industry: 'The Rooks',
-        tags: ['Syndicate', 'London'],
-        result: 'Master of London',
-    },
+  // E-commerce
+  {
+    initials: 'CB',
+    name: 'ClareBags',
+    industry: 'E-commerce',
+    tags: ['Next.js', 'TypeScript', 'Supabase'],
+    result: 'Owner manages the collection without touching code',
+    description:
+      'A bespoke handbag store built from scratch, with an editorial storefront, a real cart and a password-protected admin panel.',
+    builtBy: 'Vivian',
+    href: 'https://clarebags1.vercel.app',
+    featured: true,
+  },
+  {
+    initials: 'AC',
+    name: 'Amara & Co',
+    industry: 'E-commerce',
+    tags: ['Shopify', 'Liquid'],
+    result: 'A bespoke Shopify theme, not a stock template',
+    description:
+      'A custom Shopify storefront for a jewellery brand, with product pages, collections and cart shaped around the brand.',
+    builtBy: 'Vivian',
+    href: 'https://amara-co-xkd9y8gn.myshopify.com',
+  },
 
+  // Web apps
+  {
+    initials: 'EM',
+    name: 'Event Management System',
+    industry: 'Web apps',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    result: 'Secure login, and users manage only their own events',
+    description:
+      'A full CRUD app for creating and managing events, with JWT authentication, a protected navbar and route guards.',
+    builtBy: 'Albert Douglas',
+    href: 'https://frontend-peach-rho-82.vercel.app',
+  },
+  {
+    initials: 'NC',
+    name: 'Community Newsletter CMS',
+    industry: 'Web apps',
+    tags: ['JavaScript', 'React', 'Vercel'],
+    result: 'Editors draft, organise and publish in one workflow',
+    description:
+      'A content-management system for community newsletters, with its own client and backend.',
+    builtBy: 'Oselu Fortunatus',
+    href: 'https://community-newsletter-cms-client.vercel.app',
+  },
+  {
+    initials: 'WB',
+    name: 'Workout Buddy',
+    industry: 'Web apps',
+    tags: ['MongoDB', 'Express', 'React', 'Node'],
+    result: 'Workouts, sets and history saved through a REST API',
+    description: 'A full-stack fitness tracker where users log workouts and manage their training history.',
+    builtBy: 'Albert Douglas',
+    href: 'https://mern-workout-app-five.vercel.app',
+  },
 
+  // Web3
+  {
+    initials: 'FB',
+    name: 'Fresh Bounty',
+    industry: 'Web3',
+    tags: ['JavaScript', 'Web3', 'Vercel'],
+    result: 'Contributors paid instantly, settled on-chain',
+    description:
+      'A Web3 bounties platform. Contributors connect a wallet, pick up bounties matched to their skills and get paid in crypto.',
+    builtBy: 'Oselu Fortunatus',
+    href: 'https://fresh-bounty.vercel.app',
+    featured: true,
+  },
+
+  // Websites
+  {
+    initials: 'CL',
+    name: 'Capstone Lab Website',
+    industry: 'Websites',
+    tags: ['Astro', 'Tailwind'],
+    result: 'Near-instant load times on a corporate marketing site',
+    description: 'The marketing website for a data and technology consultancy, presenting the firm to prospective clients.',
+    builtBy: 'Clifford-Ordor Nnenna Ruth',
+    href: 'https://capstone-lab-website.vercel.app',
+  },
+  {
+    initials: 'AM',
+    name: 'Alma Mira Portfolio',
+    industry: 'Websites',
+    tags: ['Web Design'],
+    result: 'Frontend, design and data work in one portfolio',
+    description: 'A personal portfolio for a web developer and designer, with featured projects and contact details.',
+    builtBy: 'Keke Mirachel',
+    href: 'https://almamira-7b9672.netlify.app',
+  },
+
+  // Content
+  {
+    initials: 'SC',
+    name: 'Averixa Sales and Content Scripts',
+    industry: 'Content',
+    tags: ['Copywriting', 'Scripting'],
+    result: 'Clearer messaging across Averixa departments',
+    description: 'Sales and content scripts for Averixa, covering research, scripting and hook development.',
+    builtBy: 'Umekwe Blessing O.',
+  },
+  {
+    initials: 'GD',
+    name: '30-Day Graphic Design Programme',
+    industry: 'Content',
+    tags: ['Training', 'Visual Design'],
+    result: 'A month-long visual design plan for brand visibility',
+    description: "A 30-day graphic design instruction programme for Averixa's design team.",
+    builtBy: 'Umekwe Blessing O.',
+  },
+  {
+    initials: 'YT',
+    name: 'YouTube Script',
+    industry: 'Content',
+    tags: ['YouTube', 'Storytelling'],
+    result: 'Research-led script built around a strong hook',
+    description: 'A YouTube video script covering research, hook development and storytelling.',
+    builtBy: 'Umekwe Blessing O.',
+  },
 ]
 
-export default works
+export const featuredWorks = works.filter((work) => work.featured)
