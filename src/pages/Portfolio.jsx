@@ -1,76 +1,60 @@
-import { Link } from "react-router"
-import { Button, Card, CaseStudyCard } from "../components/ui"
-import { works } from "../data/works"
-
+import { useState } from 'react'
+import { Accent, Button, Card, CaseStudyCard, PillGroup, SectionHeading } from '../components/ui'
+import PageMeta from '../components/layout/PageMeta'
+import { pageMeta } from '../data/pages'
+import { categories, works } from '../data/works'
 
 export default function Portfolio() {
-    return (
-        <>
-        <section className="w-full scroll-mt-24 bg-navy-900 px-6 py-7 md:py-20">
-           <div>
-            <p className="text-body text-secondary">
-            SELECTED WORKS
-          </p>
+  const [category, setCategory] = useState('All')
+  const shown = category === 'All' ? works : works.filter((work) => work.industry === category)
 
-          <div className= 'flex w-full items-center justify-between gap-4 py-12'>
-            <h2 className="text-header font-sans">Brands we've helped <em className="font-serif text-header text-secondary">grow</em></h2>
-            
-            <Link to="/services">
-            <Button className=" text-secondary! shrink-0 border border-secondary bg-transparent ">Start your project</Button>
-            </Link>
-            
-          </div>
+  return (
+    <>
+      <PageMeta {...pageMeta.portfolio} />
 
-          <p className="mt-auto text-muted font-sans">Good work is collaborative. Explore what we made together, what changed and the results that followed</p>
-            
-           </div>
-        </section>
+      <section className="mx-auto max-w-site px-6 py-16 md:py-20">
+        <SectionHeading
+          as="h1"
+          kicker="Selected works"
+          title={
+            <>
+              Brands we've helped <span className="text-secondary-text"><Accent>grow</Accent></span>
+            </>
+          }
+          intro="Good work is collaborative. Explore what we made together, what changed and the results that followed."
+        />
 
-        {/* Section 2*/}
-        <section className="bg-navy-950 flex items-center justify-center font-sans text-body px-6 py-7">
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-4 text-center text-body py-2">
-                <p className="rounded-md border-none  border-secondary/90  bg-secondary/30 ">All</p>
-                <p>Healthcare Technology </p>
-                <p>Supply Chain & Logistics</p>
-                <p>Creative Agency</p>
-                <p>Deep Tech/AI</p>
-                <p>E-commerce & Retail</p>
-                <p>Financial Services</p>
-            </div>
-        </section>
-
-
-
-        {/* Card section */}
-      
-        <section className="w-full scroll-mt-24 bg-navy-900 px-6 py-24">
-        <div className="  mx-auto max-w-site grid gap-6 grid-cols-2 md:grid-cols-3">
- 
-                {works.map((work) => (
-                    <CaseStudyCard
-                    key={work.name}
-                        {...work}
-                    />
-                ))}
-                
+        <div className="mt-10">
+          <PillGroup label="Filter projects by category" options={categories} value={category} onChange={setCategory} />
         </div>
-        </section>
 
-            {/*Fourth Section */}
-        <section className="mb-4 w-full bg-navy-950 px-6 py-24">
-            <p className="mb-12 text-sub text-secondary">Service We Provide</p>
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-4 font-sans">
-                {works.map((work)=><Card key={work.name}>
-                    <span>{work.industry}</span>
-                </Card>)}
+        {shown.length > 0 ? (
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {shown.map((work) => (
+              <CaseStudyCard key={work.name} {...work} />
+            ))}
+          </div>
+        ) : (
+          <Card interactive={false} className="mt-8 text-center">
+            <p className="text-body text-muted">No projects in this category yet.</p>
+            <Button variant="secondary" size="sm" className="mt-4" onClick={() => setCategory('All')}>
+              Show all projects
+            </Button>
+          </Card>
+        )}
+      </section>
 
-            </div>
-        </section>
-
-
-        
-
-
-        </>
-    )
+      <section className="border-t border-line bg-navy-900">
+        <div className="mx-auto flex max-w-site flex-col items-start gap-6 px-6 py-16 md:flex-row md:items-center md:justify-between md:py-20">
+          <SectionHeading
+            title="Have a project in mind?"
+            intro="Tell us where you are and what you want to change. We'll reply within one business day."
+          />
+          <Button to="/services" className="shrink-0">
+            Start your project
+          </Button>
+        </div>
+      </section>
+    </>
+  )
 }
