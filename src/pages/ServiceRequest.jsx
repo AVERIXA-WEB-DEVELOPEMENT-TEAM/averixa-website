@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Accent } from '../components/ui'
+import PageMeta from '../components/layout/PageMeta'
+import { pageMeta } from '../data/pages'
 import RequestStepper from '../sections/service-request/RequestStepper'
 import ServicePicker from '../sections/service-request/ServicePicker'
 import ProjectDetails from '../sections/service-request/ProjectDetails'
@@ -84,9 +86,12 @@ export default function ServiceRequest() {
     if (status === 'success') window.scrollTo(0, 0)
   }, [status])
 
+  const meta = <PageMeta {...pageMeta.services} />
+
   if (status === 'success') {
     return (
       <section className="service-request-page mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+        {meta}
         <RequestSuccess serviceIds={formData.service} />
       </section>
     )
@@ -97,18 +102,19 @@ export default function ServiceRequest() {
 
   return (
     <section className="service-request-page mx-auto max-w-site px-6 py-16 md:py-20">
+      {meta}
       {/* Top text block */}
       <header className="flex max-w-3xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:gap-8">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-secondary-text">Request a Service</p>
-          <h1 className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">
+          <h1 className="text-header">
             Let’s build something{' '}
             <span className="text-secondary">
               <Accent>great</Accent>
             </span>
           </h1>
         </div>
-        <p className="max-w-2xl text-base leading-[1.6] text-muted">
+        <p className="max-w-2xl text-body text-muted">
           Tell us where you are, what feels stuck and what you want to change. We’ll take it from there.
         </p>
       </header>
@@ -117,7 +123,7 @@ export default function ServiceRequest() {
       <div
         ref={cardRef}
         tabIndex={-1}
-        className="mt-12 scroll-mt-28 rounded-[14px] border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
+        className="mt-12 scroll-mt-28 rounded-card border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
       >
         <RequestStepper total={TOTAL_STEPS} current={step} />
 

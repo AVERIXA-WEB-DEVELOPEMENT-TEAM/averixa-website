@@ -25,3 +25,6 @@ dist-ssr
 .vercel
 .env*
 .env.local
+
+# Local design files (not shipped)
+design-reference/

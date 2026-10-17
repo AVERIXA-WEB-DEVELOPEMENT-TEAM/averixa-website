@@ -7,9 +7,9 @@ const variants = {
 }
 
 const sizes = {
-  sm: 'px-4 py-2.5 text-[13px]',
-  md: 'px-6 py-3.5 text-[15px]',
-  lg: 'px-7 py-4 text-[clamp(1.0625rem,1.9vw,1.6875rem)]',
+  sm: 'px-4 py-2.5 text-small',
+  md: 'px-6 py-3.5 text-control',
+  lg: 'px-7 py-4 text-lead',
 }
 
 export default function Button({ variant = 'primary', size = 'md', pill = false, to, href, className = '', children, ...props }) {

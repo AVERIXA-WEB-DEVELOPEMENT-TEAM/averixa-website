@@ -7,7 +7,7 @@ const controlClass =
   'w-full rounded-lg border bg-navy-900 px-4 py-3 text-base leading-6 text-white placeholder:text-muted ' +
   'transition-colors duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30'
 
-export default function RequestField({ label, multiline = false, bare = false, error, className = '', inputClassName = '', ...props }) {
+export default function RequestField({ label, multiline = false, bare: _bare = false, error, className = '', inputClassName = '', ...props }) {
   const id = useId()
   const errorId = `${id}-error`
   const Control = multiline ? 'textarea' : 'input'
