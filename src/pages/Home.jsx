@@ -12,7 +12,7 @@ export default function Home() {
       <PageMeta {...pageMeta.home} />
       <Hero />
 
-      {/* About / What we do */}
+      {/* What we do */}
       <section className="w-full bg-navy-900 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-site">
           <h2 className="text-header mb-10">
