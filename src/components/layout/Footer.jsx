@@ -12,7 +12,7 @@ export default function Footer() {
               key={s.label}
               href={s.href}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               className="rounded-full border border-line px-3.5 py-2 text-xs font-semibold transition-colors duration-200 hover:border-primary hover:bg-navy-800"
             >
               {s.label}
