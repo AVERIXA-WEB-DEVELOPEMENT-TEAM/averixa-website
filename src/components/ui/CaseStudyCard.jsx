@@ -19,10 +19,10 @@ export default function CaseStudyCard({ initials, name, industry, result, tags =
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-start gap-1.5 transition-colors duration-200 hover:text-primary-soft"
+            className="transition-colors duration-200 hover:text-primary-soft"
           >
             {name}
-            <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" className="mt-1.5 shrink-0" />
+            <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" className="ml-1.5 inline align-middle" />
             <span className="sr-only">(opens in a new tab)</span>
           </a>
         ) : (
