@@ -107,14 +107,14 @@ export default function ServiceRequest() {
       <header className="flex max-w-3xl flex-col gap-8">
         <div className="flex flex-col gap-6 md:gap-8">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-secondary-text">Request a Service</p>
-          <h1 className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">
+          <h1 className="text-header">
             Let’s build something{' '}
             <span className="text-secondary">
               <Accent>great</Accent>
             </span>
           </h1>
         </div>
-        <p className="max-w-2xl text-base leading-[1.6] text-muted">
+        <p className="max-w-2xl text-body text-muted">
           Tell us where you are, what feels stuck and what you want to change. We’ll take it from there.
         </p>
       </header>
@@ -123,7 +123,7 @@ export default function ServiceRequest() {
       <div
         ref={cardRef}
         tabIndex={-1}
-        className="mt-12 scroll-mt-28 rounded-[14px] border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
+        className="mt-12 scroll-mt-28 rounded-card border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
       >
         <RequestStepper total={TOTAL_STEPS} current={step} />
 
