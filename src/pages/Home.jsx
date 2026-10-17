@@ -137,8 +137,16 @@ export default function Home() {
 
       {/* The human part */}
       <section id="about" className="w-full scroll-mt-24 bg-navy-900 px-6 py-24">
-        <div className="mx-auto max-w-site">
-          <div className="flex max-w-3xl flex-col gap-6">
+        <div className="mx-auto flex max-w-site flex-col gap-8 md:flex-row md:items-center">
+          {/* Image */}
+          <img
+            src="https://picsum.photos/600/400"
+            alt="Team collaborating on creative work"
+            className="h-64 w-full shrink-0 rounded object-cover md:h-auto md:w-1/2"
+          />
+
+          {/* Text content */}
+          <div className="flex flex-1 flex-col gap-6">
             <p className="text-body text-secondary">
               THE HUMAN PARTS
             </p>
