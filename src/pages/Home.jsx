@@ -1,7 +1,7 @@
 
 import Hero from '../sections/home/Hero'
-import { Card, Button, Tag} from '../components/ui'
-import { Link } from 'react-router'
+import { Accent, Button, Card, CaseStudyCard, SectionHeading, Tag } from '../components/ui'
+import { featuredWorks } from '../data/works'
 import PageMeta from '../components/layout/PageMeta'
 import { pageMeta } from '../data/pages'
 
@@ -13,10 +13,7 @@ export default function Home() {
       <Hero />
 
       {/* About / What we do */}
-      <section
-        id="about"
-        className="w-full scroll-mt-24 bg-navy-900 px-6 py-16 md:py-20"
-      >
+      <section className="w-full bg-navy-900 px-6 py-16 md:py-20">
         <div className="mx-auto max-w-site">
           <h2 className="text-header mb-10">
             What we do to{' '}
@@ -139,17 +136,9 @@ export default function Home() {
       </section>
 
       {/* The human part */}
-      <section className="w-full bg-navy-900 px-6 py-24">
-        <div className="mx-auto flex max-w-site flex-col gap-8 md:flex-row md:items-center">
-          {/* Image */}
-          <img
-            src="https://picsum.photos/600/400"
-            alt="Team collaborating on creative work"
-            className="h-64 w-full shrink-0 rounded object-cover md:h-auto md:w-1/2"
-          />
-
-          {/* Text content */}
-          <div className="flex flex-1 flex-col gap-6">
+      <section id="about" className="w-full scroll-mt-24 bg-navy-900 px-6 py-24">
+        <div className="mx-auto max-w-site">
+          <div className="flex max-w-3xl flex-col gap-6">
             <p className="text-body text-secondary">
               THE HUMAN PARTS
             </p>
@@ -174,28 +163,27 @@ export default function Home() {
       {/* Selected works */}
       <section className="w-full bg-navy-950 px-6 py-24">
         <div className="mx-auto max-w-site">
-          <p className="mb-4 text-body text-secondary">
-            SELECTED WORKS
-          </p>
+          <SectionHeading
+            kicker="Selected works"
+            title={
+              <>
+                Growth you can <span className="text-secondary-text"><Accent>see</Accent></span>
+              </>
+            }
+            intro="The partnerships, the thinking and the outcomes."
+          />
 
-
-          <div className= 'flex w-full items-center justify-between gap-4'>
-          <h2 className="text-header font-sans mb-6 ">
-            Growth you can{' '}
-            <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
-              see
-            </em>
-          </h2>
-        <Link to="/Portfolio">
-        <Button className='shrink-0 border border-secondary bg-transparent text-secondary hover:bg-secondary/10'>View All Brands</Button>
-        </Link>
-          
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {featuredWorks.map((work) => (
+              <CaseStudyCard key={work.name} {...work} />
+            ))}
           </div>
-          
 
-          <p className="text-body font-sans">
-            The partnerships, the thinking and the outcomes.
-          </p>
+          <div className="mt-10 flex justify-center">
+            <Button to="/portfolio" variant="secondary">
+              See all our work
+            </Button>
+          </div>
         </div>
       </section>
     </>
