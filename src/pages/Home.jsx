@@ -2,6 +2,8 @@
 import Hero from '../sections/home/Hero'
 import { Accent, Button, Card, CaseStudyCard, SectionHeading, Tag } from '../components/ui'
 import { featuredWorks } from '../data/works'
+import { growthSteps } from '../data/home'
+import { services } from '../data/serviceRequest'
 import PageMeta from '../components/layout/PageMeta'
 import { pageMeta } from '../data/pages'
 
@@ -19,62 +21,18 @@ export default function Home() {
             What we do to <Accent>grow</Accent> your brand
           </h2>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-           
-
-            {/* First card */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Website Development</h3>
-
-              <p className="flex-1 text-body text-muted">
-                Fast modern websites built to turn visitors into customers.
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                <Tag>
-                  Design
-                </Tag>
-                
-                <Tag>
-                  Build
-                </Tag>
-              </div>
-            </Card>
-
-            {/* Second card */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Content Creation</h3>
-
-              <p className="flex-1 text-body text-muted">
-                Posts, scripts and visuals that stop the scroll and keep your
-                audience coming back.
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                <Tag>
-                  Social
-                </Tag>
-                <Tag>
-                  Copy
-                </Tag>
-              </div>
-            </Card>
-
-            {/* Third card */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Digital Marketing</h3>
-
-              <p className="flex-1 text-body text-muted">
-                Campaigns and strategies that put your brand in front of the
-                right people.
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                <Tag>Strategy</Tag>
-                
-                <Tag>Growth</Tag>
-              </div>
-            </Card>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => (
+              <Card key={service.id} className="flex h-full min-w-0 flex-col gap-4">
+                <h3 className="text-sub">{service.title}</h3>
+                <p className="flex-1 text-body text-muted">{service.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <Tag key={tag}>{tag}</Tag>
+                  ))}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -87,42 +45,12 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {/* Card 1 */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Listen</h3>
-
-              <p className="text-body text-muted">
-                We understand your goals, your audience and what's getting in
-                the way.
-              </p>
-            </Card>
-
-            {/* Card 2 */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Shape</h3>
-
-              <p className="text-body text-muted">
-                We turn what we learn into a focused, practical plan.
-              </p>
-            </Card>
-
-            {/* Card 3 */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Create</h3>
-
-              <p className="text-body text-muted">
-                We bring the strategy to life with thoughtful creative work.
-              </p>
-            </Card>
-
-            {/* Card 4 */}
-            <Card className="flex h-full min-w-0 flex-col gap-4">
-              <h3 className="text-sub">Grow</h3>
-
-              <p className="text-body text-muted">
-                We learn from real results and keep making the work stronger.
-              </p>
-            </Card>
+            {growthSteps.map((step) => (
+              <Card key={step.title} className="flex h-full min-w-0 flex-col gap-4">
+                <h3 className="text-sub">{step.title}</h3>
+                <p className="text-body text-muted">{step.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
