@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Accent } from '../components/ui'
+import { Accent, SectionHeading } from '../components/ui'
 import PageMeta from '../components/layout/PageMeta'
 import { pageMeta } from '../data/pages'
 import RequestStepper from '../sections/service-request/RequestStepper'
@@ -103,21 +103,16 @@ export default function ServiceRequest() {
   return (
     <section className="mx-auto max-w-site px-6 py-16 md:py-20">
       {meta}
-      {/* Top text block */}
-      <header className="flex max-w-3xl flex-col gap-8">
-        <div className="flex flex-col gap-6 md:gap-8">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-secondary-text">Request a Service</p>
-          <h1 className="text-header">
-            Let’s build something{' '}
-            <span className="text-secondary">
-              <Accent>great</Accent>
-            </span>
-          </h1>
-        </div>
-        <p className="max-w-2xl text-body text-muted">
-          Tell us where you are, what feels stuck and what you want to change. We’ll take it from there.
-        </p>
-      </header>
+      <SectionHeading
+        as="h1"
+        kicker="Request a service"
+        title={
+          <>
+            Let’s build something <Accent>great</Accent>
+          </>
+        }
+        intro="Tell us where you are, what feels stuck and what you want to change. We’ll take it from there."
+      />
 
       {/* Form card */}
       <div

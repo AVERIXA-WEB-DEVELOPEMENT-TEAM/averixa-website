@@ -18,7 +18,7 @@ export default function Portfolio() {
           kicker="Selected works"
           title={
             <>
-              Brands we've helped <span className="text-secondary-text"><Accent>grow</Accent></span>
+              Brands we've helped <Accent>grow</Accent>
             </>
           }
           intro="Good work is collaborative. Explore what we made together, what changed and the results that followed."

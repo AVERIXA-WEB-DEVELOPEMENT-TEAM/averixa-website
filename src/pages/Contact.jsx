@@ -34,7 +34,7 @@ export default function Contact() {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h1 className="text-header">
-              Let's talk about your <span className="text-secondary-text"><Accent>growth</Accent></span>
+              Let's talk about your <Accent>growth</Accent>
             </h1>
             <p className="text-body text-muted">
               {contactIntro}{' '}

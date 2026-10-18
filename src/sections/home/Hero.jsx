@@ -1,4 +1,4 @@
-import { Button } from '../../components/ui'
+import { Accent, Button } from '../../components/ui'
 import HeroDiagram from './HeroDiagram'
 
 export default function Hero() {
@@ -13,7 +13,7 @@ export default function Hero() {
 
               <h1 className="text-balance text-hero">
                 More traffic isn't the goal.{' '}
-                <em className="font-serif font-normal tracking-normal text-secondary-text">More customers</em> is.
+                <Accent>More customers</Accent> is.
               </h1>
             </div>
 

@@ -16,11 +16,7 @@ export default function Home() {
       <section className="w-full bg-navy-900 py-16 md:py-20">
         <div className="mx-auto max-w-site px-6">
           <h2 className="text-header mb-10">
-            What we do to{' '}
-            <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
-              grow
-            </em>{' '}
-            your brand
+            What we do to <Accent>grow</Accent> your brand
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -86,12 +82,8 @@ export default function Home() {
       {/* Growing in four steps */}
       <section className="w-full bg-navy-950 py-24">
         <div className="mx-auto max-w-site px-6">
-          <h2 className="text-header font-sans mb-10">
-            From stuck to{' '}
-            <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
-              growing
-            </em>{' '}
-            in four steps
+          <h2 className="text-header mb-10">
+            From stuck to <Accent>growing</Accent> in four steps
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -147,8 +139,8 @@ export default function Home() {
 
           {/* Text content */}
           <div className="flex flex-1 flex-col gap-6">
-            <p className="text-body text-secondary">
-              THE HUMAN PARTS
+            <p className="text-kicker uppercase text-secondary-text">
+              The human parts
             </p>
 
             <h2 className="text-header">
@@ -175,7 +167,7 @@ export default function Home() {
             kicker="Selected works"
             title={
               <>
-                Growth you can <span className="text-secondary-text"><Accent>see</Accent></span>
+                Growth you can <Accent>see</Accent>
               </>
             }
             intro="The partnerships, the thinking and the outcomes."
