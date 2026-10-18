@@ -1,11 +1,11 @@
 // Services, budget and timeline options for the Service Request page.
-// Wording follows the Figma file, with spelling and formatting fixes only.
+// Wording follows the Figma file, with spelling, grammar and capitalisation fixes only.
 
 export const services = [
   {
     id: 'website-development',
     title: 'Website Development',
-    description: 'Fast, Modern Website built to turn visitors into customers.',
+    description: 'Fast, modern websites built to turn visitors into customers.',
     tags: ['Design', 'Build'],
   },
   {
@@ -17,7 +17,7 @@ export const services = [
   {
     id: 'digital-marketing',
     title: 'Digital Marketing',
-    description: 'Campaign and strategy that put your brand in front of the right people.',
+    description: 'Campaigns and strategies that put your brand in front of the right people.',
     tags: ['Strategy', 'Growth'],
   },
   {
@@ -52,6 +52,6 @@ export const services = [
   },
 ]
 
-export const budgets = ['Under $500', '$500 – $1k', '$1k – $5k', '$5k – $10k', '$10k – $15k', 'Let’s Discuss']
+export const budgets = ['Under $500', '$500 – $1k', '$1k – $5k', '$5k – $10k', '$10k – $15k', 'Let’s discuss']
 
-export const timelines = ['ASAP (within 2 weeks)', '1 Month', '2 – 3 Months', '3 – 6 Months', 'Flexible']
+export const timelines = ['ASAP (within 2 weeks)', '1 month', '2 – 3 months', '3 – 6 months', 'Flexible']

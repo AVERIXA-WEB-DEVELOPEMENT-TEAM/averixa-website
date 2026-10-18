@@ -68,7 +68,7 @@ export default function HeroDiagram() {
                     <p className="text-kicker font-semibold tracking-[0.1em] text-muted">
                       {String(i + 1).padStart(2, '0')}
                     </p>
-                    <h3 className={`text-base font-bold ${highlight ? 'text-secondary-text' : ''}`}>{title}</h3>
+                    <h3 className={`text-body font-bold ${highlight ? 'text-secondary-text' : ''}`}>{title}</h3>
                   </div>
                 </div>
               </li>
@@ -92,7 +92,7 @@ export default function HeroDiagram() {
                 <div key={stage} className="flex items-center gap-1.5">
                   {/* The Customers pill keeps glowing; its timing is baked into --animate-glow */}
                   <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    className={`rounded-full px-3 py-1 text-basic font-semibold ${
                       last
                         ? 'bg-secondary text-navy-950 motion-safe:animate-glow'
                         : 'bg-navy-700 text-white motion-safe:animate-rise'

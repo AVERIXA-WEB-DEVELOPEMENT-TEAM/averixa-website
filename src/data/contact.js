@@ -1,7 +1,7 @@
 // Copy for the Contact page. Social links and the WhatsApp number live in socials.js.
 import { CircleCheck, FileText, MessagesSquare } from 'lucide-react'
 
-export const contactIntro = 'WhatsApp is the fastest way. We reply within minutes.'
+export const contactIntro = 'WhatsApp is the fastest way to reach us. We reply within one business day.'
 
 // Shown under "Connect with us"
 export const mainHandle = '@averixadigital'
@@ -17,7 +17,7 @@ export const nextSteps = [
   {
     icon: CircleCheck,
     title: 'We review',
-    description: 'We read your message and review your business details within minutes.',
+    description: 'We read your message and review your business details within one business day.',
   },
   {
     icon: MessagesSquare,

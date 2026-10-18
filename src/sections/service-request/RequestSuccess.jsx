@@ -15,11 +15,11 @@ export default function RequestSuccess({ serviceIds }) {
 
   return (
     <div className="flex w-full flex-col items-center gap-10 rounded-card border border-line bg-navy-800 px-5 py-12 text-center md:py-16">
-      <span className="grid size-20 place-items-center rounded-full border border-secondary/30 bg-secondary/20 text-base font-bold text-secondary-text md:size-24">
+      <span className="grid size-20 place-items-center rounded-full border border-secondary/30 bg-secondary/20 text-body font-bold text-secondary-text md:size-24">
         Done
       </span>
 
-      <div className="flex flex-col items-center gap-8 md:gap-[60px]">
+      <div className="flex flex-col items-center gap-6">
         <h1 ref={headingRef} tabIndex={-1} className="text-header outline-none">
           Request Received
         </h1>
@@ -34,7 +34,7 @@ export default function RequestSuccess({ serviceIds }) {
         </p>
       </div>
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:gap-16 md:gap-[130px]">
+      <div className="flex flex-col gap-4 sm:flex-row">
         <Button to="/">Back to Home</Button>
         <Button to="/portfolio" variant="secondary">
           View Our Work

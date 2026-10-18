@@ -1,5 +1,5 @@
 export function Accent({ children }) {
-  return <em className="font-serif font-normal">{children}</em>
+  return <em className="font-serif font-normal tracking-normal text-secondary-text">{children}</em>
 }
 
 export default function SectionHeading({ kicker, title, intro, as: Heading = 'h2', className = '' }) {

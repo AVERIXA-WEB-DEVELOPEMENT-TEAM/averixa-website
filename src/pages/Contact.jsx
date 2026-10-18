@@ -34,7 +34,7 @@ export default function Contact() {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
             <h1 className="text-header">
-              Let's talk about your <span className="text-secondary-text"><Accent>growth</Accent></span>
+              Let's talk about your <Accent>growth</Accent>
             </h1>
             <p className="text-body text-muted">
               {contactIntro}{' '}
@@ -49,17 +49,17 @@ export default function Contact() {
               </span>
               <div>
                 <p className="text-small text-muted">{whatsapp.label} · Direct chat</p>
-                <p className="whitespace-nowrap text-lead font-bold">{whatsapp.number}</p>
+                <p className="whitespace-nowrap text-sub">{whatsapp.number}</p>
               </div>
             </div>
-            <Button href={whatsapp.href} pill className="w-full shrink-0 sm:w-auto">
+            <Button href={whatsapp.href} className="w-full shrink-0 sm:w-auto">
               <SocialIcon name="WhatsApp" className="size-4" />
               Chat on WhatsApp
             </Button>
           </div>
 
           <div className={panel}>
-            <h2 className="text-lead font-bold">{requestPrompt.title}</h2>
+            <h2 className="text-sub">{requestPrompt.title}</h2>
             <p className="mt-2 text-body text-muted">{requestPrompt.text}</p>
             <Button to="/services" variant="success" className="mt-5 w-full sm:w-auto">
               {requestPrompt.cta}
@@ -71,7 +71,7 @@ export default function Contact() {
         {/* Right: socials and what happens next */}
         <div className="flex flex-col gap-6">
           <div className={panel}>
-            <h2 className="text-lead font-bold">Connect with us</h2>
+            <h2 className="text-sub">Connect with us</h2>
             <p className="mt-1 text-small text-secondary-text">{mainHandle}</p>
             <ul className="mt-5 flex flex-wrap gap-2.5">
               {socials.map((social) => (
@@ -94,7 +94,7 @@ export default function Contact() {
           </div>
 
           <div className={panel}>
-            <h2 className="text-lead font-bold">What happens next</h2>
+            <h2 className="text-sub">What happens next</h2>
             <ol className="mt-6">
               {nextSteps.map(({ icon: Icon, title, description }, i) => (
                 <li key={title} className="relative grid grid-cols-[auto_1fr] gap-4 pb-7 last:pb-0">

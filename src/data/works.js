@@ -1,7 +1,7 @@
-// Portfolio content for the Portfolio page and the Selected works section on Home.
+// Portfolio content for the Portfolio page and the Case studies section on Home.
 // `industry` is the category the filter pills use.
 // `tags` are the services we delivered, using the titles from src/data/serviceRequest.js.
-// `featured: true` puts a project in Selected works on Home.
+// `featured: true` puts a project in the Case studies section on Home.
 // No invented numbers: only add a figure to `result` when the client has confirmed it.
 
 export const categories = ['All', 'Education', 'E-commerce', 'Web apps', 'Web3', 'Websites', 'Content']
