@@ -90,7 +90,7 @@ export default function ServiceRequest() {
 
   if (status === 'success') {
     return (
-      <section className="service-request-page mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+      <section className="mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
         {meta}
         <RequestSuccess serviceIds={formData.service} />
       </section>
@@ -101,7 +101,7 @@ export default function ServiceRequest() {
   const sending = status === 'sending'
 
   return (
-    <section className="service-request-page mx-auto max-w-site px-6 py-16 md:py-20">
+    <section className="mx-auto max-w-site px-6 py-16 md:py-20">
       {meta}
       {/* Top text block */}
       <header className="flex max-w-3xl flex-col gap-8">
