@@ -1,8 +1,7 @@
-import { ShieldCheck } from 'lucide-react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { Accent, Button, SocialIcon } from '../components/ui'
 import PageMeta from '../components/layout/PageMeta'
-import ContactForm from '../sections/contact/ContactForm'
-import { contactIntro, mainHandle, nextSteps, trustNote } from '../data/contact'
+import { contactIntro, mainHandle, nextSteps, requestPrompt, trustNote } from '../data/contact'
 import { pageMeta } from '../data/pages'
 import { socials, whatsapp } from '../data/socials'
 
@@ -59,7 +58,14 @@ export default function Contact() {
             </Button>
           </div>
 
-          <ContactForm className={panel} />
+          <div className={panel}>
+            <h2 className="text-lead font-bold">{requestPrompt.title}</h2>
+            <p className="mt-2 text-body text-muted">{requestPrompt.text}</p>
+            <Button to="/services" variant="success" className="mt-5 w-full sm:w-auto">
+              {requestPrompt.cta}
+              <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+            </Button>
+          </div>
         </div>
 
         {/* Right: socials and what happens next */}

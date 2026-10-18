@@ -6,7 +6,12 @@ export const contactIntro = 'WhatsApp is the fastest way. We reply within minute
 // Shown under "Connect with us"
 export const mainHandle = '@averixadigital'
 
-export const responseNote = 'We typically respond within minutes during 9am – 6pm WAT.'
+// Points detailed enquiries to the service request form
+export const requestPrompt = {
+  title: 'Have a project in mind?',
+  text: "Tell us what you need, your budget and timeline. We'll send you a tailored proposal.",
+  cta: 'Start a request',
+}
 
 export const nextSteps = [
   {
