@@ -13,8 +13,8 @@ export default function Home() {
       <Hero />
 
       {/* What we do */}
-      <section className="w-full bg-navy-900 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-site">
+      <section className="w-full bg-navy-900 py-16 md:py-20">
+        <div className="mx-auto max-w-site px-6">
           <h2 className="text-header mb-10">
             What we do to{' '}
             <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
@@ -84,8 +84,8 @@ export default function Home() {
       </section>
 
       {/* Growing in four steps */}
-      <section className="w-full bg-navy-950 px-6 py-24">
-        <div className="mx-auto max-w-site">
+      <section className="w-full bg-navy-950 py-24">
+        <div className="mx-auto max-w-site px-6">
           <h2 className="text-header font-sans mb-10">
             From stuck to{' '}
             <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
@@ -136,8 +136,8 @@ export default function Home() {
       </section>
 
       {/* The human part */}
-      <section id="about" className="w-full scroll-mt-24 bg-navy-900 px-6 py-24">
-        <div className="mx-auto flex max-w-site flex-col gap-8 md:flex-row md:items-center">
+      <section id="about" className="w-full scroll-mt-24 bg-navy-900 py-24">
+        <div className="mx-auto flex max-w-site px-6 flex-col gap-8 md:flex-row md:items-center">
           {/* Image */}
           <img
             src="https://picsum.photos/600/400"
@@ -169,8 +169,8 @@ export default function Home() {
       </section>
 
       {/* Selected works */}
-      <section className="w-full bg-navy-950 px-6 py-24">
-        <div className="mx-auto max-w-site">
+      <section className="w-full bg-navy-950 py-24">
+        <div className="mx-auto max-w-site px-6">
           <SectionHeading
             kicker="Selected works"
             title={
