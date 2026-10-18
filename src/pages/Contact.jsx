@@ -57,7 +57,6 @@ export default function Contact() {
               Chat on WhatsApp
             </Button>
           </div>
-        </div>
 
           <div className={panel}>
             <h2 className="text-lead font-bold">{requestPrompt.title}</h2>
