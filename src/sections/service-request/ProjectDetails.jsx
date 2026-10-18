@@ -54,6 +54,7 @@ export default function ProjectDetails({ formData, onChange }) {
         <Field
           label="Your goals"
           multiline
+          required
           rows={6}
           value={formData.goals}
           onChange={(e) => onChange('goals', e.target.value)}

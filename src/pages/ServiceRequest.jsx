@@ -43,7 +43,8 @@ export default function ServiceRequest() {
   // Is this step answered?
   function isStepComplete(n) {
     if (n === 1) return formData.service.length > 0
-    if (n === 2) return formData.budget !== '' && formData.timeline !== ''
+    // The API requires goals too, so step 2 can't be skipped without them
+    if (n === 2) return formData.budget !== '' && formData.timeline !== '' && formData.goals.trim() !== ''
     if (n === 3) return Object.keys(getContactErrors(formData)).length === 0
     return false
   }
