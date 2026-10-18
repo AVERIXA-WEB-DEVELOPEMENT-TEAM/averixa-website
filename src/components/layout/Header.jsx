@@ -43,7 +43,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <div className="hidden sm:block">
             <Button to="/services" size="sm">
-              Book a session
+              Start a project
             </Button>
           </div>
 
@@ -79,7 +79,7 @@ export default function Header() {
             </NavLink>
           ))}
           <Button to="/services" size="sm" onClick={close} className="mt-5 w-full">
-            Book a session
+            Start a project
           </Button>
         </nav>
       )}
