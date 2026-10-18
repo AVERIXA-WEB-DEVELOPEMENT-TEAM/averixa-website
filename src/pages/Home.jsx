@@ -160,11 +160,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected works */}
+      {/* Case studies */}
       <section className="w-full bg-navy-950 py-24">
         <div className="mx-auto max-w-site px-6">
           <SectionHeading
-            kicker="Selected works"
+            kicker="Case studies"
             title={
               <>
                 Growth you can <Accent>see</Accent>
@@ -181,7 +181,7 @@ export default function Home() {
 
           <div className="mt-10 flex justify-center">
             <Button to="/portfolio" variant="secondary">
-              See all our work
+              View all case studies
             </Button>
           </div>
         </div>

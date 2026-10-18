@@ -15,7 +15,7 @@ export default function Portfolio() {
       <section className="mx-auto max-w-site px-6 py-16 md:py-20">
         <SectionHeading
           as="h1"
-          kicker="Selected works"
+          kicker="Case studies"
           title={
             <>
               Brands we've helped <Accent>grow</Accent>
