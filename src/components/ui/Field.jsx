@@ -2,11 +2,11 @@ import { useId } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 const control =
-  'w-full rounded-lg border border-line bg-navy-900 px-4 py-3 text-control placeholder:text-muted/60 ' +
+  'w-full rounded-lg border bg-navy-900 px-4 py-3 text-control placeholder:text-muted/60 ' +
   'transition-colors duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30'
 
 // Pass `options` to get a dropdown; `placeholder` then becomes its empty first choice.
-export default function Field({ label, multiline = false, options, error, className = '', ...props }) {
+export default function Field({ label, multiline = false, options, error, className = '', inputClassName = '', ...props }) {
   const id = useId()
   const errorId = `${id}-error`
   const shared = {
@@ -14,7 +14,7 @@ export default function Field({ label, multiline = false, options, error, classN
     'aria-invalid': !!error,
     'aria-describedby': error ? errorId : undefined,
   }
-  const errorBorder = error ? 'border-red-400' : ''
+  const errorBorder = error ? 'border-red-400' : 'border-line'
 
   let input
   if (options) {
@@ -46,7 +46,7 @@ export default function Field({ label, multiline = false, options, error, classN
     input = (
       <Input
         {...shared}
-        className={`${control} text-white ${multiline ? 'min-h-28 resize-y' : ''} ${errorBorder}`}
+        className={`${control} text-white ${multiline ? 'min-h-28 resize-y' : ''} ${errorBorder} ${inputClassName}`}
         {...props}
       />
     )
@@ -59,7 +59,7 @@ export default function Field({ label, multiline = false, options, error, classN
       </label>
       {input}
       {error && (
-        <p id={errorId} className="text-sm text-red-300">
+        <p id={errorId} className="text-small text-red-300">
           {error}
         </p>
       )}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import RequestField from './RequestField'
+import { Field } from '../../components/ui'
 import RequestSummary from './RequestSummary'
 import ConsentOptions from './ConsentOptions'
 
@@ -33,15 +33,15 @@ export default function ContactDetails({ formData, onChange }) {
 
   return (
     <div>
-      <div className="flex max-w-[796px] flex-col gap-4 md:gap-[26px]">
-        <h2 className="text-header">How should we reach you?</h2>
+      <div className="flex max-w-3xl flex-col gap-3">
+        <h2 className="text-sub">How should we reach you?</h2>
         <p className="text-body text-muted">
           We’ll review your request and get back to you within one business day.
         </p>
       </div>
 
-      <div className="mt-8 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-x-8 md:px-6 lg:gap-y-12">
-        <RequestField
+      <div className="mt-8 grid gap-6 md:mt-10 md:grid-cols-2 md:gap-x-6 lg:gap-y-8">
+        <Field
           label="Full name"
           autoComplete="name"
           required
@@ -51,7 +51,7 @@ export default function ContactDetails({ formData, onChange }) {
           placeholder="Jane Nora Smith"
           error={touched.name ? errors.name : undefined}
         />
-        <RequestField
+        <Field
           label="Email address"
           type="email"
           autoComplete="email"
@@ -62,7 +62,7 @@ export default function ContactDetails({ formData, onChange }) {
           placeholder="Jane@gmail.com"
           error={touched.email ? errors.email : undefined}
         />
-        <RequestField
+        <Field
           className="md:col-span-2"
           label="Company or brand"
           autoComplete="organization"
@@ -70,7 +70,7 @@ export default function ContactDetails({ formData, onChange }) {
           onChange={(e) => onChange('company', e.target.value)}
           placeholder="Averixa Digital"
         />
-        <RequestField
+        <Field
           className="md:col-span-2"
           label="Anything else?"
           multiline
@@ -78,7 +78,7 @@ export default function ContactDetails({ formData, onChange }) {
           value={formData.notes}
           onChange={(e) => onChange('notes', e.target.value)}
           placeholder="Links, context, references – anything helpful..."
-          inputClassName="min-h-32 lg:min-h-[180px]"
+          inputClassName="min-h-32"
         />
         <RequestSummary className="md:col-span-2" formData={formData} />
         <ConsentOptions

@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Accent, SectionHeading } from '../components/ui'
+import { Accent, SectionHeading, Stepper } from '../components/ui'
 import PageMeta from '../components/layout/PageMeta'
 import { pageMeta } from '../data/pages'
-import RequestStepper from '../sections/service-request/RequestStepper'
 import ServicePicker from '../sections/service-request/ServicePicker'
 import ProjectDetails from '../sections/service-request/ProjectDetails'
 import ContactDetails, { getContactErrors } from '../sections/service-request/ContactDetails'
@@ -118,9 +117,9 @@ export default function ServiceRequest() {
       <div
         ref={cardRef}
         tabIndex={-1}
-        className="mt-12 scroll-mt-28 rounded-card border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
+        className="mt-12 scroll-mt-28 rounded-card border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-16"
       >
-        <RequestStepper total={TOTAL_STEPS} current={step} />
+        <Stepper total={TOTAL_STEPS} current={step} />
 
         <div key={step} className="service-step-panel mt-10">
           {step === 1 && (
@@ -143,7 +142,7 @@ export default function ServiceRequest() {
         {status === 'error' && (
           <p
             role="alert"
-            className="mt-8 rounded-[10px] border border-red-400/50 bg-red-400/10 px-4 py-3 text-sm text-red-300"
+            className="mt-8 rounded-lg border border-red-400/50 bg-red-400/10 px-4 py-3 text-small text-red-300"
           >
             We couldn’t send your request. Please check your connection and try again.
           </p>
