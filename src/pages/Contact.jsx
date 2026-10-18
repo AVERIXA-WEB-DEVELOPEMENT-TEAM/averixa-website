@@ -52,7 +52,7 @@ export default function Contact() {
                 <p className="whitespace-nowrap text-sub">{whatsapp.number}</p>
               </div>
             </div>
-            <Button href={whatsapp.href} pill className="w-full shrink-0 sm:w-auto">
+            <Button href={whatsapp.href} className="w-full shrink-0 sm:w-auto">
               <SocialIcon name="WhatsApp" className="size-4" />
               Chat on WhatsApp
             </Button>
