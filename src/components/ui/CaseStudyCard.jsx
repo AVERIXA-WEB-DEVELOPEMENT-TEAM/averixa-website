@@ -21,8 +21,12 @@ export default function CaseStudyCard({ initials, name, industry, result, tags =
             rel="noopener noreferrer"
             className="transition-colors duration-200 hover:text-primary-soft"
           >
-            {name}
-            <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" className="ml-1.5 inline align-middle" />
+            {/* Keep the arrow on the same line as the last word */}
+            {name.slice(0, name.lastIndexOf(' ') + 1)}
+            <span className="whitespace-nowrap">
+              {name.slice(name.lastIndexOf(' ') + 1)}
+              <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" className="ml-1.5 inline align-middle" />
+            </span>
             <span className="sr-only">(opens in a new tab)</span>
           </a>
         ) : (
