@@ -30,7 +30,7 @@
   --container-site: 1200px;
 
   /* Type scale, from the design system. Each size carries its own line height, weight and spacing */
-  --text-hero: clamp(2.25rem, 4.4vw, 3.5rem);
+  --text-hero: clamp(2.375rem, 4.8vw, 3.75rem);
   --text-hero--line-height: 1.12;
   --text-hero--font-weight: 700;
   --text-hero--letter-spacing: -0.02em;
