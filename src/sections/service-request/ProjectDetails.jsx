@@ -52,7 +52,7 @@ export default function ProjectDetails({ formData, onChange }) {
           onChange={(value) => onChange('timeline', value)}
         />
         <Field
-          label="Your goals"
+          label="Your goals (required)"
           multiline
           required
           rows={6}
