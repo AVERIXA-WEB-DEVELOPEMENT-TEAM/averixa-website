@@ -23,14 +23,14 @@ export default function Home() {
            
 
             {/* First card */}
-            <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-sub font-sans">Website Development</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Website Development</h3>
 
-              <p className="my-4 flex-1 py-2 text-muted">
+              <p className="flex-1 text-body text-muted">
                 Fast modern websites built to turn visitors into customers.
               </p>
 
-              <div className="mt-auto flex gap-2 ">
+              <div className="flex flex-wrap gap-2">
                 <Tag>
                   Design
                 </Tag>
@@ -42,15 +42,15 @@ export default function Home() {
             </Card>
 
             {/* Second card */}
-            <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-sub font-sans">Content Creation</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Content Creation</h3>
 
-              <p className="my-4 flex-1 py-2 text-muted">
+              <p className="flex-1 text-body text-muted">
                 Posts, scripts and visuals that stop the scroll and keep your
                 audience coming back.
               </p>
 
-              <div className="mt-auto flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Tag>
                   Social
                 </Tag>
@@ -61,15 +61,15 @@ export default function Home() {
             </Card>
 
             {/* Third card */}
-            <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-sub font-sans">Digital Marketing</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Digital Marketing</h3>
 
-              <p className="my-4 flex-1 py-2 text-muted">
+              <p className="flex-1 text-body text-muted">
                 Campaigns and strategies that put your brand in front of the
                 right people.
               </p>
 
-              <div className="mt-auto flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Tag>Strategy</Tag>
                 
                 <Tag>Growth</Tag>
@@ -88,38 +88,38 @@ export default function Home() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {/* Card 1 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Listen</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Listen</h3>
 
-              <p className="my-4 flex-1 text-muted font-sans">
+              <p className="text-body text-muted">
                 We understand your goals, your audience and what's getting in
                 the way.
               </p>
             </Card>
 
             {/* Card 2 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Shape</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Shape</h3>
 
-              <p className="my-4 flex-1 text-muted font-sans">
+              <p className="text-body text-muted">
                 We turn what we learn into a focused, practical plan.
               </p>
             </Card>
 
             {/* Card 3 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Create</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Create</h3>
 
-              <p className="my-4 flex text-muted font-sans">
+              <p className="text-body text-muted">
                 We bring the strategy to life with thoughtful creative work.
               </p>
             </Card>
 
             {/* Card 4 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Grow</h3>
+            <Card className="flex h-full min-w-0 flex-col gap-4">
+              <h3 className="text-sub">Grow</h3>
 
-              <p className="my-4 flex-1 text-muted">
+              <p className="text-body text-muted">
                 We learn from real results and keep making the work stronger.
               </p>
             </Card>

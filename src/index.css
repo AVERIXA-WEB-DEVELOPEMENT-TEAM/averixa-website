@@ -45,7 +45,7 @@
   --text-header--font-weight: 800;
   --text-header--letter-spacing: -0.02em;
 
-  --text-sub: clamp(1.5rem, 2.6vw, 2rem);
+  --text-sub: clamp(1.25rem, 2vw, 1.5rem);
   --text-sub--line-height: 1.2;
   --text-sub--font-weight: 700;
 
