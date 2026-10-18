@@ -1,3 +1,4 @@
+import { SocialIcon } from '../ui'
 import { socials } from '../../data/socials'
 import Logo from './Logo'
 
@@ -6,19 +7,22 @@ export default function Footer() {
     <footer className="border-t border-line/70 bg-navy-950/70">
       <div className="mx-auto flex max-w-site flex-wrap items-center justify-between gap-4 px-6 py-5 text-small">
         <Logo size="sm" />
-        <div className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2">
           {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-line px-3.5 py-2 text-xs font-semibold transition-colors duration-200 hover:border-primary hover:bg-navy-800"
-            >
-              {s.label}
-            </a>
+            <li key={s.label}>
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={s.label}
+                aria-label={`${s.label} (opens in a new tab)`}
+                className="grid size-9 place-items-center rounded-full border border-line text-muted transition-colors duration-200 hover:border-primary hover:bg-navy-800 hover:text-white"
+              >
+                <SocialIcon name={s.label} className="size-4" />
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </footer>
   )
