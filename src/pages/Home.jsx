@@ -144,7 +144,7 @@ export default function Home() {
             </p>
 
             <h2 className="text-header">
-              "The best work starts with listening and not a template".
+              “The best work starts with listening, not a template.”
             </h2>
 
             <p className=" text-body">

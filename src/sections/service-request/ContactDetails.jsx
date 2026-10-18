@@ -48,7 +48,7 @@ export default function ContactDetails({ formData, onChange }) {
           value={formData.name}
           onChange={(e) => onChange('name', e.target.value)}
           onBlur={() => markTouched('name')}
-          placeholder="Jane Nora Smith"
+          placeholder="Jane Smith"
           error={touched.name ? errors.name : undefined}
         />
         <Field
@@ -59,7 +59,7 @@ export default function ContactDetails({ formData, onChange }) {
           value={formData.email}
           onChange={(e) => onChange('email', e.target.value)}
           onBlur={() => markTouched('email')}
-          placeholder="Jane@gmail.com"
+          placeholder="jane@company.com"
           error={touched.email ? errors.email : undefined}
         />
         <Field
@@ -68,7 +68,7 @@ export default function ContactDetails({ formData, onChange }) {
           autoComplete="organization"
           value={formData.company}
           onChange={(e) => onChange('company', e.target.value)}
-          placeholder="Averixa Digital"
+          placeholder="Your company or brand"
         />
         <Field
           className="md:col-span-2"
@@ -77,7 +77,7 @@ export default function ContactDetails({ formData, onChange }) {
           rows={4}
           value={formData.notes}
           onChange={(e) => onChange('notes', e.target.value)}
-          placeholder="Links, context, references – anything helpful..."
+          placeholder="Links, context, references – anything helpful…"
           inputClassName="min-h-32"
         />
         <RequestSummary className="md:col-span-2" formData={formData} />
