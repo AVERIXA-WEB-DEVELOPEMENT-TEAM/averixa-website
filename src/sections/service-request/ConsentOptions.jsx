@@ -5,7 +5,7 @@ export default function ConsentOptions({ newsletterOptIn, marketingConsent, onCh
 
   return (
     <fieldset className="md:col-span-2 border-t border-line pt-6">
-      <legend className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-white">
+      <legend className="mb-4 text-kicker uppercase text-muted">
         Optional email preferences
       </legend>
       <div className="flex flex-col gap-4">
@@ -18,8 +18,8 @@ export default function ConsentOptions({ newsletterOptIn, marketingConsent, onCh
             className="mt-1 size-4 shrink-0 accent-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           />
           <span>
-            <span className="block text-sm font-semibold text-white">Monthly newsletter</span>
-            <span className="mt-1 block text-sm leading-[1.6] text-muted">
+            <span className="block text-control font-semibold text-white">Monthly newsletter</span>
+            <span className="mt-1 block text-small text-muted">
               Send me Averixa Digital’s monthly newsletter.
             </span>
           </span>
@@ -34,8 +34,8 @@ export default function ConsentOptions({ newsletterOptIn, marketingConsent, onCh
             className="mt-1 size-4 shrink-0 accent-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           />
           <span>
-            <span className="block text-sm font-semibold text-white">Marketing emails</span>
-            <span className="mt-1 block text-sm leading-[1.6] text-muted">
+            <span className="block text-control font-semibold text-white">Marketing emails</span>
+            <span className="mt-1 block text-small text-muted">
               I agree to receive occasional marketing emails from Averixa Digital.
             </span>
           </span>

@@ -1,11 +1,11 @@
+import { SelectCard } from '../../components/ui'
 import { services } from '../../data/serviceRequest'
-import ServiceCard from './ServiceCard'
 
 export default function ServicePicker({ value, onChange }) {
   return (
     <div>
-      <div className="flex max-w-[796px] flex-col gap-4 md:gap-[26px]">
-        <h2 id="service-step-title" className="text-header">
+      <div className="flex max-w-3xl flex-col gap-3">
+        <h2 id="service-step-title" className="text-sub">
           What do you need help with?
         </h2>
         <p className="text-body text-muted">
@@ -19,13 +19,13 @@ export default function ServicePicker({ value, onChange }) {
         className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 md:gap-6"
       >
         {services.map((service) => (
-          <ServiceCard
+          <SelectCard
             key={service.id}
             title={service.title}
             description={service.description}
             tags={service.tags}
             selected={value.includes(service.id)}
-            onSelect={() => onChange(service.id)}
+            onClick={() => onChange(service.id)}
           />
         ))}
       </div>

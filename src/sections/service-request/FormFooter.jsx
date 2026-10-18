@@ -6,7 +6,7 @@ export default function FormFooter({ step, total, onBack, onNext, canContinue, n
       <Button variant="secondary" onClick={onBack} disabled={step === 1}>
         Back
       </Button>
-      <p className="hidden text-xs font-medium text-muted sm:block md:text-sm">
+      <p className="hidden text-small font-medium text-muted sm:block">
         Step {step} of {total}
       </p>
       <Button onClick={onNext} disabled={!canContinue}>

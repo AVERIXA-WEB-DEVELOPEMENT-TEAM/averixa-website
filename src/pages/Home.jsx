@@ -2,6 +2,8 @@
 import Hero from '../sections/home/Hero'
 import { Accent, Button, Card, CaseStudyCard, SectionHeading, Tag } from '../components/ui'
 import { featuredWorks } from '../data/works'
+import { growthSteps } from '../data/home'
+import { services } from '../data/serviceRequest'
 import PageMeta from '../components/layout/PageMeta'
 import { pageMeta } from '../data/pages'
 
@@ -13,131 +15,49 @@ export default function Home() {
       <Hero />
 
       {/* What we do */}
-      <section className="w-full bg-navy-900 px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-site">
+      <section className="w-full bg-navy-900 py-16 md:py-20">
+        <div className="mx-auto max-w-site px-6">
           <h2 className="text-header mb-10">
-            What we do to{' '}
-            <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
-              grow
-            </em>{' '}
-            your brand
+            What we do to <Accent>grow</Accent> your brand
           </h2>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-           
-
-            {/* First card */}
-            <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-sub font-sans">Website Development</h3>
-
-              <p className="my-4 flex-1 py-2 text-muted">
-                Fast modern websites built to turn visitors into customers.
-              </p>
-
-              <div className="mt-auto flex gap-2 ">
-                <Tag>
-                  Design
-                </Tag>
-                
-                <Tag>
-                  Build
-                </Tag>
-              </div>
-            </Card>
-
-            {/* Second card */}
-            <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-sub font-sans">Content Creation</h3>
-
-              <p className="my-4 flex-1 py-2 text-muted">
-                Posts, scripts and visuals that stop the scroll and keep your
-                audience coming back.
-              </p>
-
-              <div className="mt-auto flex gap-2">
-                <Tag>
-                  Social
-                </Tag>
-                <Tag>
-                  Copy
-                </Tag>
-              </div>
-            </Card>
-
-            {/* Third card */}
-            <Card className="flex h-full min-w-0 flex-col bg-navy-950">
-              <h3 className="text-sub font-sans">Digital Marketing</h3>
-
-              <p className="my-4 flex-1 py-2 text-muted">
-                Campaigns and strategies that put your brand in front of the
-                right people.
-              </p>
-
-              <div className="mt-auto flex gap-2">
-                <Tag>Strategy</Tag>
-                
-                <Tag>Growth</Tag>
-              </div>
-            </Card>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => (
+              <Card key={service.id} className="flex h-full min-w-0 flex-col gap-4">
+                <h3 className="text-sub">{service.title}</h3>
+                <p className="flex-1 text-body text-muted">{service.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <Tag key={tag}>{tag}</Tag>
+                  ))}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Growing in four steps */}
-      <section className="w-full bg-navy-950 px-6 py-24">
-        <div className="mx-auto max-w-site">
-          <h2 className="text-header font-sans mb-10">
-            From stuck to{' '}
-            <em className="font-serif font-normal tracking-[-0.01em] text-secondary-text">
-              growing
-            </em>{' '}
-            in four steps
+      <section className="w-full bg-navy-950 py-24">
+        <div className="mx-auto max-w-site px-6">
+          <h2 className="text-header mb-10">
+            From stuck to <Accent>growing</Accent> in four steps
           </h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {/* Card 1 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Listen</h3>
-
-              <p className="my-4 flex-1 text-muted font-sans">
-                We understand your goals, your audience and what's getting in
-                the way.
-              </p>
-            </Card>
-
-            {/* Card 2 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Shape</h3>
-
-              <p className="my-4 flex-1 text-muted font-sans">
-                We turn what we learn into a focused, practical plan.
-              </p>
-            </Card>
-
-            {/* Card 3 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Create</h3>
-
-              <p className="my-4 flex text-muted font-sans">
-                We bring the strategy to life with thoughtful creative work.
-              </p>
-            </Card>
-
-            {/* Card 4 */}
-            <Card className="flex h-full flex-col bg-navy-900">
-              <h3 className="text-center text-sub font-sans">Grow</h3>
-
-              <p className="my-4 flex-1 text-muted">
-                We learn from real results and keep making the work stronger.
-              </p>
-            </Card>
+            {growthSteps.map((step) => (
+              <Card key={step.title} className="flex h-full min-w-0 flex-col gap-4">
+                <h3 className="text-sub">{step.title}</h3>
+                <p className="text-body text-muted">{step.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* The human part */}
-      <section id="about" className="w-full scroll-mt-24 bg-navy-900 px-6 py-24">
-        <div className="mx-auto flex max-w-site flex-col gap-8 md:flex-row md:items-center">
+      <section id="about" className="w-full scroll-mt-24 bg-navy-900 py-24">
+        <div className="mx-auto flex max-w-site px-6 flex-col gap-8 md:flex-row md:items-center">
           {/* Image */}
           <img
             src="https://picsum.photos/600/400"
@@ -147,12 +67,12 @@ export default function Home() {
 
           {/* Text content */}
           <div className="flex flex-1 flex-col gap-6">
-            <p className="text-body text-secondary">
-              THE HUMAN PARTS
+            <p className="text-kicker uppercase text-secondary-text">
+              The human parts
             </p>
 
             <h2 className="text-header">
-              "The best work starts with listening and not a template".
+              “The best work starts with listening, not a template.”
             </h2>
 
             <p className=" text-body">
@@ -168,14 +88,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected works */}
-      <section className="w-full bg-navy-950 px-6 py-24">
-        <div className="mx-auto max-w-site">
+      {/* Case studies */}
+      <section className="w-full bg-navy-950 py-24">
+        <div className="mx-auto max-w-site px-6">
           <SectionHeading
-            kicker="Selected works"
+            kicker="Case studies"
             title={
               <>
-                Growth you can <span className="text-secondary-text"><Accent>see</Accent></span>
+                Growth you can <Accent>see</Accent>
               </>
             }
             intro="The partnerships, the thinking and the outcomes."
@@ -189,7 +109,7 @@ export default function Home() {
 
           <div className="mt-10 flex justify-center">
             <Button to="/portfolio" variant="secondary">
-              See all our work
+              View all case studies
             </Button>
           </div>
         </div>

@@ -14,6 +14,15 @@
   --color-line-strong: #33467f;
   --color-muted: #a9b4d6;
 
+  /* Social brand colours, used only for the logo tiles on the Contact page */
+  --color-brand-instagram-from: #feda75;
+  --color-brand-instagram-via: #d62976;
+  --color-brand-instagram-to: #4f5bd5;
+  --color-brand-linkedin: #0a66c2;
+  --color-brand-facebook: #1877f2;
+  --color-brand-youtube: #ff0000;
+  --color-brand-whatsapp: #25d366;
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;
 
@@ -21,7 +30,7 @@
   --container-site: 1200px;
 
   /* Type scale, from the design system. Each size carries its own line height, weight and spacing */
-  --text-hero: clamp(2.5rem, 5.4vw, 4.125rem);
+  --text-hero: clamp(2.375rem, 4.8vw, 3.75rem);
   --text-hero--line-height: 1.12;
   --text-hero--font-weight: 700;
   --text-hero--letter-spacing: -0.02em;
@@ -36,14 +45,14 @@
   --text-header--font-weight: 800;
   --text-header--letter-spacing: -0.02em;
 
-  --text-sub: clamp(1.5rem, 2.6vw, 2rem);
+  --text-sub: clamp(1.25rem, 2vw, 1.5rem);
   --text-sub--line-height: 1.2;
   --text-sub--font-weight: 700;
 
   --text-eyebrow: clamp(1.25rem, 2.2vw, 1.75rem);
   --text-eyebrow--line-height: 1.2;
 
-  --text-lead: clamp(1.0625rem, 2vw, 1.625rem);
+  --text-lead: clamp(1.0625rem, 1.6vw, 1.25rem);
   --text-lead--line-height: 1.375;
 
   --text-body: 1rem;

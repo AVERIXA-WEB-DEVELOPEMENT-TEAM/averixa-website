@@ -15,10 +15,10 @@ export default function Portfolio() {
       <section className="mx-auto max-w-site px-6 py-16 md:py-20">
         <SectionHeading
           as="h1"
-          kicker="Selected works"
+          kicker="Case studies"
           title={
             <>
-              Brands we've helped <span className="text-secondary-text"><Accent>grow</Accent></span>
+              Brands we've helped <Accent>grow</Accent>
             </>
           }
           intro="Good work is collaborative. Explore what we made together, what changed and the results that followed."
