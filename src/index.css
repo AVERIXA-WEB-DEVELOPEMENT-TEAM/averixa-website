@@ -30,7 +30,7 @@
   --container-site: 1200px;
 
   /* Type scale, from the design system. Each size carries its own line height, weight and spacing */
-  --text-hero: clamp(2.5rem, 5.4vw, 4.125rem);
+  --text-hero: clamp(2.25rem, 4.4vw, 3.5rem);
   --text-hero--line-height: 1.12;
   --text-hero--font-weight: 700;
   --text-hero--letter-spacing: -0.02em;
@@ -52,7 +52,7 @@
   --text-eyebrow: clamp(1.25rem, 2.2vw, 1.75rem);
   --text-eyebrow--line-height: 1.2;
 
-  --text-lead: clamp(1.0625rem, 2vw, 1.625rem);
+  --text-lead: clamp(1.0625rem, 1.6vw, 1.25rem);
   --text-lead--line-height: 1.375;
 
   --text-body: 1rem;

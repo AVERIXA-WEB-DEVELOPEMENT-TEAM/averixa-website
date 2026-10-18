@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="mx-auto flex max-w-site flex-col items-center gap-12 px-6 py-14 lg:flex-row lg:gap-10">
         {/* Left: copy */}
-        <div className="flex flex-1 flex-col gap-10 lg:px-6">
+        <div className="flex flex-1 flex-col gap-10">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-7">
               <p className="font-serif text-eyebrow italic text-secondary-text">Digital Growth Agency</p>
@@ -24,8 +24,8 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-4 sm:gap-10">
-            <Button to="/contact" size="lg" pill>Book a free growth call</Button>
-            <Button to="/portfolio" variant="secondary" size="lg" pill>See our work</Button>
+            <Button to="/contact" pill>Book a free growth call</Button>
+            <Button to="/portfolio" variant="secondary" pill>See our work</Button>
           </div>
         </div>
 
