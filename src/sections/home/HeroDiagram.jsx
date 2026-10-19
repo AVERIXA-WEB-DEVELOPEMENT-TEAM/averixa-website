@@ -29,7 +29,7 @@ export default function HeroDiagram() {
       <div className="rounded-card border border-line bg-navy-800/90 p-5 shadow-2xl shadow-black/30 sm:p-7">
         <div className="mb-6 flex items-center justify-between gap-3 motion-safe:animate-rise" style={delay(0.15)}>
           <p className="text-kicker uppercase text-muted">How Averixa works</p>
-          <span className="rounded-full bg-navy-700 px-2.5 py-1 text-[11px] font-medium text-white">3 steps</span>
+          <span className="rounded-full bg-navy-700 px-2.5 py-1 text-kicker font-medium tracking-normal text-white">3 steps</span>
         </div>
 
         <ol>
@@ -65,10 +65,10 @@ export default function HeroDiagram() {
 
                 <div className="pt-0.5 motion-safe:animate-rise" style={delay(start + 0.05)}>
                   <div className="transition duration-250 motion-safe:group-hover:translate-x-1">
-                    <p className="text-[11px] font-semibold tracking-[0.1em] text-muted">
+                    <p className="text-kicker font-semibold tracking-[0.1em] text-muted">
                       {String(i + 1).padStart(2, '0')}
                     </p>
-                    <h3 className={`text-base font-bold ${highlight ? 'text-secondary-text' : ''}`}>{title}</h3>
+                    <h3 className={`text-body font-bold ${highlight ? 'text-secondary-text' : ''}`}>{title}</h3>
                   </div>
                 </div>
               </li>
@@ -92,7 +92,7 @@ export default function HeroDiagram() {
                 <div key={stage} className="flex items-center gap-1.5">
                   {/* The Customers pill keeps glowing; its timing is baked into --animate-glow */}
                   <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    className={`rounded-full px-3 py-1 text-basic font-semibold ${
                       last
                         ? 'bg-secondary text-navy-950 motion-safe:animate-glow'
                         : 'bg-navy-700 text-white motion-safe:animate-rise'

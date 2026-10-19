@@ -17,5 +17,17 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      // Destructuring a prop out to keep it off the DOM is intentional
+      'no-unused-vars': ['error', { ignoreRestSiblings: true, argsIgnorePattern: '^_' }],
+      'react-refresh/only-export-components': ['error', { allowConstantExport: true, allowExportNames: ['getContactErrors'] }],
+    },
+  },
+  {
+    // Vercel serverless functions run on Node
+    files: ['api/**/*.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
   },
 ])

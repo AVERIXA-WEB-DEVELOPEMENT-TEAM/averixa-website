@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Accent } from '../components/ui'
-import RequestStepper from '../sections/service-request/RequestStepper'
+import { Accent, SectionHeading, Stepper } from '../components/ui'
+import PageMeta from '../components/layout/PageMeta'
+import { pageMeta } from '../data/pages'
 import ServicePicker from '../sections/service-request/ServicePicker'
 import ProjectDetails from '../sections/service-request/ProjectDetails'
 import ContactDetails, { getContactErrors } from '../sections/service-request/ContactDetails'
@@ -42,7 +43,8 @@ export default function ServiceRequest() {
   // Is this step answered?
   function isStepComplete(n) {
     if (n === 1) return formData.service.length > 0
-    if (n === 2) return formData.budget !== '' && formData.timeline !== ''
+    // The API requires goals too, so step 2 can't be skipped without them
+    if (n === 2) return formData.budget !== '' && formData.timeline !== '' && formData.goals.trim() !== ''
     if (n === 3) return Object.keys(getContactErrors(formData)).length === 0
     return false
   }
@@ -84,9 +86,12 @@ export default function ServiceRequest() {
     if (status === 'success') window.scrollTo(0, 0)
   }, [status])
 
+  const meta = <PageMeta {...pageMeta.services} />
+
   if (status === 'success') {
     return (
-      <section className="service-request-page mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+      <section className="mx-auto flex min-h-[70vh] max-w-site items-center px-6 py-16 md:py-20">
+        {meta}
         <RequestSuccess serviceIds={formData.service} />
       </section>
     )
@@ -96,30 +101,26 @@ export default function ServiceRequest() {
   const sending = status === 'sending'
 
   return (
-    <section className="service-request-page mx-auto max-w-site px-6 py-16 md:py-20">
-      {/* Top text block */}
-      <header className="flex max-w-3xl flex-col gap-8">
-        <div className="flex flex-col gap-6 md:gap-8">
-          <p className="text-xs font-bold uppercase tracking-[0.14em] text-secondary-text">Request a Service</p>
-          <h1 className="text-[28px] font-extrabold leading-tight tracking-normal md:text-[40px]">
-            Let’s build something{' '}
-            <span className="text-secondary">
-              <Accent>great</Accent>
-            </span>
-          </h1>
-        </div>
-        <p className="max-w-2xl text-base leading-[1.6] text-muted">
-          Tell us where you are, what feels stuck and what you want to change. We’ll take it from there.
-        </p>
-      </header>
+    <section className="mx-auto max-w-site px-6 py-16 md:py-20">
+      {meta}
+      <SectionHeading
+        as="h1"
+        kicker="Request a service"
+        title={
+          <>
+            Let’s build something <Accent>great</Accent>
+          </>
+        }
+        intro="Tell us where you are, what feels stuck and what you want to change. We’ll take it from there."
+      />
 
       {/* Form card */}
       <div
         ref={cardRef}
         tabIndex={-1}
-        className="mt-12 scroll-mt-28 rounded-[14px] border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-[62px]"
+        className="mt-12 scroll-mt-28 rounded-card border border-line bg-navy-900/40 px-5 py-8 outline-none md:mt-16 md:px-12 md:py-12 lg:px-16"
       >
-        <RequestStepper total={TOTAL_STEPS} current={step} />
+        <Stepper total={TOTAL_STEPS} current={step} />
 
         <div key={step} className="service-step-panel mt-10">
           {step === 1 && (
@@ -142,7 +143,7 @@ export default function ServiceRequest() {
         {status === 'error' && (
           <p
             role="alert"
-            className="mt-8 rounded-[10px] border border-red-400/50 bg-red-400/10 px-4 py-3 text-sm text-red-300"
+            className="mt-8 rounded-lg border border-red-400/50 bg-red-400/10 px-4 py-3 text-small text-red-300"
           >
             We couldn’t send your request. Please check your connection and try again.
           </p>

@@ -11,14 +11,22 @@ export default function Stepper({ total, current }) {
 
         return (
           <li key={n} className={`flex items-center ${n < total ? 'flex-1' : ''}`} aria-current={now ? 'step' : undefined}>
-            <span
-              className={`grid size-9 shrink-0 place-items-center rounded-full border-2 text-sm font-bold ${
-                done ? 'border-secondary bg-secondary text-white' : now ? 'border-secondary text-white' : 'border-line text-muted'
-              }`}
-            >
-              {done ? <Check size={16} strokeWidth={2.5} /> : n}
-            </span>
-            {n < total && <span className={`mx-2 h-0.5 flex-1 rounded ${done ? 'bg-secondary' : 'bg-line'}`} />}
+            {done ? (
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-secondary text-navy-950 md:size-13">
+                <span className="sr-only">Step {n} complete</span>
+                <Check size={20} strokeWidth={1.5} aria-hidden="true" />
+              </span>
+            ) : (
+              <span
+                className={`grid size-10 shrink-0 place-items-center rounded-lg text-small font-semibold text-white md:size-13 md:text-body ${
+                  now ? 'bg-primary' : 'border border-line-strong bg-navy-900'
+                }`}
+              >
+                {n}
+              </span>
+            )}
+
+            {n < total && <span aria-hidden="true" className={`h-px flex-1 ${done ? 'bg-secondary' : 'bg-line-strong'}`} />}
           </li>
         )
       })}

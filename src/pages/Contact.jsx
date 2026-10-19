@@ -1,106 +1,124 @@
-import React from "react";
+import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { Accent, Button, SocialIcon } from '../components/ui'
+import PageMeta from '../components/layout/PageMeta'
+import { contactIntro, mainHandle, nextSteps, requestPrompt, trustNote } from '../data/contact'
+import { pageMeta } from '../data/pages'
+import { socials, whatsapp } from '../data/socials'
+
+// Frosted panel that lets the background glow show through
+const panel = 'rounded-card border border-line bg-navy-800/60 p-6 backdrop-blur-md md:p-7'
+
+const brandTile = {
+  Instagram: 'bg-linear-to-tr from-brand-instagram-from via-brand-instagram-via to-brand-instagram-to',
+  LinkedIn: 'bg-brand-linkedin',
+  X: 'bg-black',
+  Facebook: 'bg-brand-facebook',
+  YouTube: 'bg-brand-youtube',
+  TikTok: 'bg-black',
+  'WhatsApp Channel': 'bg-brand-whatsapp',
+}
+
+const stepTone = ['bg-secondary/20 text-secondary-text', 'bg-primary/25 text-primary-soft', 'bg-navy-700 text-white']
 
 export default function Contact() {
   return (
-    <section className="min-h-screen w-full bg-[#070E2C] text-white flex flex-col font-sans antialiased">
+    <section className="relative isolate overflow-hidden">
+      <PageMeta {...pageMeta.contact} />
 
-      {/* HEADER
-      <header className="h- w-full border-b border-white/[0.06] flex items-center justify-between px-6 lg:px-12">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-white text-[#070E2C] font-bold text-xs flex items-center justify-center">A</div>
-          <span className="text- font-semibold">Averixa Digital</span>
-        </div>
+      {/* Background glow */}
+      <div aria-hidden="true" className="absolute -left-40 top-56 -z-10 size-96 rounded-full bg-secondary/15 blur-3xl" />
+      <div aria-hidden="true" className="absolute -right-32 top-0 -z-10 size-96 rounded-full bg-primary/20 blur-3xl" />
 
-        <div className="hidden md:flex items-center gap-1 bg-[#121A3F] border border-white/10 rounded-full p-1">
-          <span className="px-4 py-1.5 text-xs text-white/50">Home</span>
-          <span className="px-4 py-1.5 text-xs text-white/50">Service</span>
-          <span className="px-4 py-1.5 text-xs text-white/50">About</span>
-          <span className="px-4 py-1.5 text-xs text-white/50">Portfolio</span>
-          <span className="px-4 py-1.5 text-xs bg-[#3B5BFF] rounded-full text-white font-medium">Contact</span>
-        </div>
-
-        <button className="bg-[#3B5BFF] hover:bg-[#344fe6] transition text-white text-xs font-medium px-4 py-2 rounded-lg">
-          Book a session
-        </button>
-      </header> */}
-
-      {/* BODY */}
-      <div className="flex-1 px-6 lg:px-12 pt-16 relative">
-        <p className="text- tracking-[0.2em] text-[#8FE9A3] font-semibold mb-4">CONTACT</p>
-
-        <h1 style={{fontSize: '46px', lineHeight: '46px'}} className="font-bold tracking-tight max-w-">
-          Let's talk about your <span className="font-serif italic font-normal text-[#8FE9A3]">growth</span>
-        </h1>
-
-        <p className="text-white/50 text- mt-4 max-w- leading-6">
-          The fastest way to reach us is WhatsApp. Send a message and the team will reply directly.
-        </p>
-
-        {/* CARDS */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.85fr] gap-4 mt-12 max-w-">
-
-          {/* WhatsApp */}
-          <div className="rounded-2xl border border-[#8FE9A3]/60 bg-[#111941]/80 p-7">
-            <p className="text- tracking-widest text-[#8FE9A3] font-semibold">WHATSAPP</p>
-            <h2 className="text- lg:text- font-bold mt-3">+234 800 000 0000</h2>
-            <p className="text-white/40 text- mt-2">Tell us what you need. We usually reply within one business day.</p>
-            <a
-              href="https://wa.me/2348000000000"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex mt-6 bg-[#6EDD82] hover:bg-[#5fd474] text-[#08120A] text-xs font-semibold px-5 py-3 rounded-lg transition"
-            >
-              Chat on WhatsApp
-            </a>
+      <div className="mx-auto grid max-w-site gap-6 px-6 py-16 md:py-20 lg:grid-cols-[1.2fr_1fr] lg:gap-8">
+        {/* Left: talk to us */}
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
+            <h1 className="text-header">
+              Let's talk about your <Accent>growth</Accent>
+            </h1>
+            <p className="text-body text-muted">
+              {contactIntro}{' '}
+              <SocialIcon name="WhatsApp" className="inline size-4 align-[-0.125em] text-secondary-text" />
+            </p>
           </div>
 
-          {/* Social - CLICKABLE NOW */}
-          <div className="flex flex-col gap-4">
-
-            {/* INSTAGRAM - CLICKABLE */}
-            <a
-              href="https://instagram.com/averixadigital"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex-1 w-full rounded-2xl border border-white/10 bg-[#111941]/70 p-5 flex items-center justify-between hover:border-white/20 hover:bg-[#162052] transition-all cursor-pointer"
-            >
+          <div className={`${panel} flex flex-wrap items-center gap-5`}>
+            <div className="flex min-w-max flex-1 items-center gap-4">
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-brand-whatsapp text-white">
+                <SocialIcon name="WhatsApp" className="size-6" />
+              </span>
               <div>
-                <p className="text- tracking-widest text-white/40">INSTAGRAM</p>
-                <p className="text-sm font-semibold mt-1">@averixadigital</p>
+                <p className="text-small text-muted">{whatsapp.label} · Direct chat</p>
+                <p className="whitespace-nowrap text-sub">{whatsapp.number}</p>
               </div>
-              <span className="text-xs text-white/50 group-hover:text-white transition">Follow →</span>
-            </a>
+            </div>
+            <Button href={whatsapp.href} className="w-full shrink-0 sm:w-auto">
+              <SocialIcon name="WhatsApp" className="size-4" />
+              Chat on WhatsApp
+            </Button>
+          </div>
 
-            {/* TIKTOK - CLICKABLE */}
-            <a
-              href="https://tiktok.com/@averixadigital"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex-1 w-full rounded-2xl border border-white/10 bg-[#111941]/70 p-5 flex items-center justify-between hover:border-white/20 hover:bg-[#162052] transition-all cursor-pointer"
-            >
-              <div>
-                <p className="text- tracking-widest text-white/40">TIKTOK</p>
-                <p className="text-sm font-semibold mt-1">@averixadigital</p>
-              </div>
-              <span className="text-xs text-white/50 group-hover:text-white transition">Follow →</span>
-            </a>
+          <div className={panel}>
+            <h2 className="text-sub">{requestPrompt.title}</h2>
+            <p className="mt-2 text-body text-muted">{requestPrompt.text}</p>
+            <Button to="/services" variant="success" className="mt-5 w-full sm:w-auto">
+              {requestPrompt.cta}
+              <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+            </Button>
+          </div>
+        </div>
 
+        {/* Right: socials and what happens next */}
+        <div className="flex flex-col gap-6">
+          <div className={panel}>
+            <h2 className="text-sub">Connect with us</h2>
+            <p className="mt-1 text-small text-secondary-text">{mainHandle}</p>
+            <ul className="mt-5 flex flex-wrap gap-2.5">
+              {socials.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={social.label}
+                    aria-label={`${social.label}, ${social.handle} (opens in a new tab)`}
+                    className="grid size-12 place-items-center rounded-xl border border-line bg-navy-900/60 transition duration-200 hover:-translate-y-0.5 hover:border-primary"
+                  >
+                    <span className={`grid size-8 place-items-center rounded-lg text-white ${brandTile[social.label]}`}>
+                      <SocialIcon name={social.label} />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={panel}>
+            <h2 className="text-sub">What happens next</h2>
+            <ol className="mt-6">
+              {nextSteps.map(({ icon: Icon, title, description }, i) => (
+                <li key={title} className="relative grid grid-cols-[auto_1fr] gap-4 pb-7 last:pb-0">
+                  {i < nextSteps.length - 1 && (
+                    <span aria-hidden="true" className="absolute bottom-1 left-5 top-12 border-l border-dashed border-line-strong" />
+                  )}
+                  <span className={`grid size-10 place-items-center rounded-xl ${stepTone[i]}`}>
+                    <Icon size={20} strokeWidth={1.5} aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h3 className="text-body font-bold">{title}</h3>
+                    <p className="mt-1 text-small text-muted">{description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-7 flex items-center justify-center gap-2 rounded-lg border border-line bg-navy-900/60 px-4 py-3 text-small text-muted">
+              <ShieldCheck size={16} strokeWidth={1.5} aria-hidden="true" />
+              {trustNote}
+            </p>
           </div>
         </div>
       </div>
-
-      {/* FOOTER
-      <footer className="h- mt-12 border-t border-white/10 flex items-center justify-between px-6 lg:px-12">
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 rounded-full bg-white text-[#070E2C] font-bold text- flex items-center justify-center">A</div>
-          <span className="text-xs font-semibold">Averixa Digital</span>
-        </div>
-        <div className="flex gap-2">
-          <a href="https://instagram.com/averixadigital" target="_blank" rel="noreferrer" className="text- px-3 py-1.5 rounded-full border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition">Instagram</a>
-          <a href="https://tiktok.com/@averixadigital" target="_blank" rel="noreferrer" className="text- px-3 py-1.5 rounded-full border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition">TikTok</a>
-          <a href="https://wa.me/2348000000000" target="_blank" rel="noreferrer" className="text- px-3 py-1.5 rounded-full border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition">WhatsApp</a>
-        </div>
-      </footer> */}
     </section>
-  );
+  )
 }

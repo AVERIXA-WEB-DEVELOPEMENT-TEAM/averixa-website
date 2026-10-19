@@ -1,18 +1,15 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router'
 import { Menu, X } from 'lucide-react'
+import { Button } from '../ui'
 import Logo from './Logo'
 
 const links = [
   { to: '/', label: 'Home' },
-  { to: '/services', label: 'Service' },
-  { to: '/#about', label: 'About' },
+  { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/contact', label: 'Contact' },
 ]
-
-const bookButton =
-  'rounded-lg bg-primary px-4 py-2.5 text-[13px] font-semibold transition duration-200 hover:-translate-y-px hover:bg-primary-hover'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -33,8 +30,8 @@ export default function Header() {
               to={link.to}
               end
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-[13px] font-semibold transition-colors duration-200 ${
-                  isActive && link.label !== 'About' ? 'bg-primary text-white' : 'text-muted hover:text-white'
+                `rounded-full px-4 py-2 text-small font-semibold transition-colors duration-200 ${
+                  isActive ? 'bg-primary text-white' : 'text-muted hover:text-white'
                 }`
               }
             >
@@ -44,9 +41,11 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link to="/services" className={`hidden sm:inline-flex ${bookButton}`}>
-            Book a session
-          </Link>
+          <div className="hidden sm:block">
+            <Button to="/services" size="sm">
+              Start a project
+            </Button>
+          </div>
 
           {/* Menu button: only below 1024px */}
           <button
@@ -72,16 +71,16 @@ export default function Header() {
               onClick={close}
               className={({ isActive }) =>
                 `block border-b border-line/60 py-3.5 font-semibold ${
-                  isActive && link.label !== 'About' ? 'text-white' : 'text-muted'
+                  isActive ? 'text-white' : 'text-muted'
                 }`
               }
             >
               {link.label}
             </NavLink>
           ))}
-          <Link to="/services" onClick={close} className={`mt-5 flex w-full justify-center ${bookButton}`}>
-            Book a session
-          </Link>
+          <Button to="/services" size="sm" onClick={close} className="mt-5 w-full">
+            Start a project
+          </Button>
         </nav>
       )}
     </header>
