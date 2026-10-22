@@ -1,82 +1,67 @@
-import { Link } from "react-router";
-const Colours = {
-    primary: "#2c5ce0",
-    green: "#3fb45f",
-    white: "#ffffff",
-    navy950: "#081333",
-    navy800: "#0f1f4d",
-    navy700: "#17306e",
-    line: "#1f3270",
-    lineStrong: "#33467f",
-    muted: "#a9b4d6",
-};
+import { Accent, Button } from '../components/ui'
+import PageMeta from '../components/layout/PageMeta'
+import { pageMeta } from '../data/pages'
+import { whatsapp } from '../data/socials'
+
+// The growth chart with one step missing: the dashed bar is the page that wasn't found
 const bars = [
-    { height: "24%", background: Colours.primary },
-    { height: "39%", background: Colours.primary },
-    { height: "54%", background: Colours.primary },
-    { height: "69%", dashed: true },
-    { height: "84%", background: Colours.navy700 },
-    { height: "100%", background: Colours.green },
-];
+  { height: '24%', className: 'bg-primary' },
+  { height: '39%', className: 'bg-primary' },
+  { height: '54%', className: 'bg-primary' },
+  { height: '69%', className: 'border-2 border-dashed border-line-strong', missing: true },
+  { height: '84%', className: 'bg-navy-700' },
+  { height: '100%', className: 'bg-secondary' },
+]
+
 export default function NotFound() {
-   return (
+  return (
+    <section className="mx-auto max-w-site px-6 py-24">
+      <PageMeta {...pageMeta.notFound} />
 
-<section className="mx-auto max-w-site px-6 py-24">
- <div className="grid items-center gap-16 md:grid-cols-2">
-                <div>
-     <p className="text-sm font-semi-bold tracking-widest"
-     style={{ color: Colours.green}}
-     >
-        ERROR 404
-     </p>
-    <h1 className="text-display mt-4" style={{ color: Colours.white }} 
-    >Looks like this step is {""}
-     <em className="font-serif font-normal italic" 
-     style={{ color: Colours.green}}
-     >missing
-     </em>.
-     </h1>
-     <p className="mt-6 text-lg" style={{ color: Colours.muted }} >The page you're looking for doesn't exist or has moved. Let's get you back on the path to growth</p>
- <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-   <Link to="/" className="rounded-lg px-6 py-4 text-center font-semibold transition-transform duration-200 hover:-translate-y-px"
-   style={{ background: Colours.primary, color: Colours.white }}
-   >Back to Home</Link>
-   <Link to="/portfolio" className="rounded-lg border px-6 py-4 text-center font-semibold transition-transform duration-200 hover:-translate-y-px"
-   style={{ borderColor: Colours.lineStrong, color:Colours.white, }}
-   >See our work"</Link>
-         </div>
+      <div className="grid items-center gap-16 md:grid-cols-2">
+        <div>
+          <p className="text-kicker uppercase text-secondary-text">Error 404</p>
+          <h1 className="mt-4 text-display">
+            Looks like this step is <Accent>missing</Accent>.
+          </h1>
+          <p className="mt-6 text-lead text-muted">
+            The page you're looking for doesn't exist or has moved. Let's get you back on the path to growth.
+          </p>
 
-         <p className="mt-8 text-sm" style={{ color: Colours.muted }}
-         >Still stuck?{""}
-            <a href="https://wa.me/" className="font-semibold text-white underline"
-            style={{ color: Colours.white }}
-            >  Message us on whatsapp</a>
-         </p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Button to="/">Back to Home</Button>
+            <Button to="/portfolio" variant="secondary">
+              See our work
+            </Button>
+          </div>
+
+          <p className="mt-8 text-small text-muted">
+            Still stuck?{' '}
+            <a href={whatsapp.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline">
+              Message us on WhatsApp
+            </a>
+          </p>
         </div>
 
-    <div aria-hidden="true" className="rounded-2xl border p-8"
-    style={{ background: Colours.navy800, borderColor: Colours.line, }}
-        >
-     <div className="flex h-52 items-end justify-between gap-3">
-      {bars.map((bar, index) => ( 
-       <div key={index}
-     className="flex flex-1 items-center justify-center rounded-lg font-bold"
-     style={{height: bar.height, background: bar.dashed ? "transparent" : bar. background, border: bar.dashed ? `2px dashed ${Colours.lineStrong}` : "none", color: Colours.white, }}
-             >
-         {bar.dashed ? "?" : null}
-         </div>
-          ))} 
+        <div aria-hidden="true" className="rounded-card border border-line bg-navy-800 p-8">
+          <div className="flex h-52 items-end justify-between gap-3">
+            {bars.map((bar, index) => (
+              <div
+                key={index}
+                className={`flex flex-1 items-center justify-center rounded-lg font-bold text-white ${bar.className}`}
+                style={{ height: bar.height }}
+              >
+                {bar.missing ? '?' : null}
+              </div>
+            ))}
           </div>
-                        
-         <div className="mt-4 flex justify-between border-t pt-3 text-sm"
-         style={{ borderColor: Colours.line, color: Colours.muted,
-             }}
-    >
-        <span>Visitors</span>
-        <span>Customers</span>
+
+          <div className="mt-4 flex justify-between border-t border-line pt-3 text-small text-muted">
+            <span>Visitors</span>
+            <span>Customers</span>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-      </section>
-    );
+    </section>
+  )
 }
