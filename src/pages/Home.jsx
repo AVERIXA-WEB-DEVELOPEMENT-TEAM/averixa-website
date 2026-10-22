@@ -57,16 +57,8 @@ export default function Home() {
 
       {/* The human part */}
       <section id="about" className="w-full scroll-mt-24 bg-navy-900 py-24">
-        <div className="mx-auto flex max-w-site px-6 flex-col gap-8 md:flex-row md:items-center">
-          {/* Image */}
-          <img
-            src="https://picsum.photos/600/400"
-            alt="Team collaborating on creative work"
-            className="h-64 w-full shrink-0 rounded object-cover md:h-auto md:w-1/2"
-          />
-
-          {/* Text content */}
-          <div className="flex flex-1 flex-col gap-6">
+        <div className="mx-auto max-w-site px-6">
+          <div className="flex max-w-3xl flex-col gap-6">
             <p className="text-kicker uppercase text-secondary-text">
               The human parts
             </p>
@@ -75,13 +67,13 @@ export default function Home() {
               “The best work starts with listening, not a template.”
             </h2>
 
-            <p className=" text-body">
+            <p className="text-body">
               You won't be passed through layers of account management.
               You'll work directly with the people shaping the strategy,
               designing the experience and measuring what happens next.
             </p>
 
-            <p className="text-muted">
+            <p className="text-body text-muted">
               Clear thinking, honest conversations, no theatre.
             </p>
           </div>
