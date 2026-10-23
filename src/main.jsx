@@ -8,6 +8,7 @@ import Portfolio from './pages/Portfolio'
 import ServiceRequest from './pages/ServiceRequest'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="services" element={<ServiceRequest />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

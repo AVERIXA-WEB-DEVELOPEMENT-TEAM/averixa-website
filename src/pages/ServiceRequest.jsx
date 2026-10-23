@@ -31,6 +31,10 @@ export default function ServiceRequest() {
   const [formData, setFormData] = useState(initialForm)
   // 'idle' → 'sending' → 'success' or 'error'
   const [status, setStatus] = useState('idle')
+  // Privacy Policy consent is required to submit, but isn't sent with the request
+  const [privacyAccepted, setPrivacyAccepted] = useState(false)
+  const [privacyError, setPrivacyError] = useState(false)
+  const privacyRef = useRef(null)
 
   const cardRef = useRef(null)
   const hasNavigated = useRef(false)
@@ -63,6 +67,11 @@ export default function ServiceRequest() {
 
   async function handleSubmit() {
     if (!isStepComplete(TOTAL_STEPS) || status === 'sending') return
+    if (!privacyAccepted) {
+      setPrivacyError(true)
+      privacyRef.current?.focus()
+      return
+    }
     setStatus('sending')
     try {
       await submitServiceRequest(formData)
@@ -137,7 +146,21 @@ export default function ServiceRequest() {
             />
           )}
           {step === 2 && <ProjectDetails formData={formData} onChange={updateField} />}
-          {step === 3 && <ContactDetails formData={formData} onChange={updateField} />}
+          {step === 3 && (
+            <ContactDetails
+              formData={formData}
+              onChange={updateField}
+              privacy={{
+                checked: privacyAccepted,
+                onChange: (checked) => {
+                  setPrivacyAccepted(checked)
+                  if (checked) setPrivacyError(false)
+                },
+                error: privacyError,
+                inputRef: privacyRef,
+              }}
+            />
+          )}
         </div>
 
         {status === 'error' && (
