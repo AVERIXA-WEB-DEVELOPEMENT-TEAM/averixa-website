@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Field } from '../../components/ui'
 import RequestSummary from './RequestSummary'
 import ConsentOptions from './ConsentOptions'
+import PrivacyConsent from './PrivacyConsent'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -22,7 +23,7 @@ export function getContactErrors(formData) {
   return errors
 }
 
-export default function ContactDetails({ formData, onChange }) {
+export default function ContactDetails({ formData, onChange, privacy }) {
   // Which fields the person has already left. Errors only show for these.
   const [touched, setTouched] = useState({})
   const errors = getContactErrors(formData)
@@ -86,6 +87,7 @@ export default function ContactDetails({ formData, onChange }) {
           marketingConsent={formData.marketingConsent}
           onChange={onChange}
         />
+        <PrivacyConsent {...privacy} />
       </div>
     </div>
   )
