@@ -31,4 +31,4 @@ export const nextSteps = [
   },
 ]
 
-export const trustNote = 'Secure · No spam · 100% confidential'
+export const trustNote = 'No spam · We never sell your data'

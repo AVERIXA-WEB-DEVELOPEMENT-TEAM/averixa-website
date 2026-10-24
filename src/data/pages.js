@@ -19,6 +19,11 @@ export const pageMeta = {
     title: 'Contact | Averixa Digital',
     description: 'Chat with Averixa Digital on WhatsApp or find us on Instagram, LinkedIn, X, Facebook, YouTube and TikTok.',
   },
+  privacy: {
+    title: 'Privacy Policy | Averixa Digital',
+    description:
+      'How Averixa Digital collects, uses and protects your personal data, and your rights under the Nigeria Data Protection Act and GDPR.',
+  },
   notFound: {
     title: 'Page not found | Averixa Digital',
     description: 'The page you were looking for does not exist on the Averixa Digital website.',
