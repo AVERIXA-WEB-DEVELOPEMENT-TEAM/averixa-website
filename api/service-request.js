@@ -1,6 +1,5 @@
 import { validateServiceRequest } from "./_lib/validators/serviceRequest.js";
 import * as defaultEmailService from "./_lib/services/emailService.js";
-// import { sendEmail, getOwnerEmail } from "./_lib/services/emailService.js";
 import { companyNotification } from "./_lib/templates/companyNotification.js";
 import { clientConfirmation } from "./_lib/templates/clientConfirmation.js";
 import { newsletterWelcome } from "./_lib/templates/newsletterWelcome.js";

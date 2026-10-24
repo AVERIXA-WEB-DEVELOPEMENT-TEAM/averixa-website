@@ -1,5 +1,3 @@
-// Minimal shared wrapper. Inline styles only — email clients don't load CSS files.
-
 const BRAND_NAME = "Averixa Digital";
 const CONTACT_EMAIL = "averixadigitalhq@gmail.com";
 const SITE_URL = "https://www.averixadigital.com";
