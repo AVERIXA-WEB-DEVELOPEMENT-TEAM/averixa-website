@@ -21,7 +21,7 @@ export function clientConfirmation(data) {
 
   return {
     subject: "We received your request — Averixa Digital",
-    html: emailLayout({ heading: "Request received", bodyHtml }),
+    html: emailLayout({ heading: "Request received", bodyHtml, footer: 'brand' }),
     text: [
       `Hi ${firstName},`,
       "",

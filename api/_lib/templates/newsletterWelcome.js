@@ -22,7 +22,7 @@ export function newsletterWelcome(data) {
 
   return {
     subject: "Welcome to Averixa Digital",
-    html: emailLayout({ heading: "You're on the list", bodyHtml }),
+    html: emailLayout({ heading: "You're on the list", bodyHtml, footer: 'legal' }),
     text: [
       `Hi ${firstName},`,
       "",

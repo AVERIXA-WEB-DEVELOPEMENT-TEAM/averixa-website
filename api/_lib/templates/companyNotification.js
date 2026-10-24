@@ -27,7 +27,7 @@ export function companyNotification(data) {
 
   return {
     subject: `New service request — ${data.name} (${serviceTitles.join(" · ")})`,
-    html: emailLayout({ heading: "New service request", bodyHtml }),
+    html: emailLayout({ heading: "New service request", bodyHtml, footer: 'none' }),
     text: [
       "New service request",
       "",
